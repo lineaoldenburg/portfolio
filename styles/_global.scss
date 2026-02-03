@@ -1,6 +1,42 @@
 @import "./_variables";
 
+//RESETS
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+// Remove default margins and padding
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+//RESETS OVER
+
+body {
+    background-color: $almost-black;
+}
+
+main {
+    background-color: white;
+    margin: $space-sm;
+    border-radius: $space-lg;
+    min-height: 110vh;
+    position: fixed;
+    width: calc(100vw - (#{$space-sm} * 2));
+    padding: 0 $space-lg;
+    overflow-y: auto;
+}
+
 nav {
+    display: flex;
+    justify-content: space-between;
+    padding: $space-lg  $space-lg 0  $space-lg;
+    position: fixed;
+    width: calc(100vw - (#{$space-sm} * 2));
+    left: $space-sm;
+    top: $space-sm;
+
+
     .nav_col {
         font-family: $title-font;
     }

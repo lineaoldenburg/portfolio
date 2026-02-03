@@ -1,6 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Dela+Gothic+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Dela+Gothic+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Dela+Gothic+One&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #141414;
+}
+
+main {
+  background-color: white;
+  margin: 8px;
+  border-radius: 24px;
+  min-height: 110vh;
+  position: fixed;
+  width: calc(100vw - 8px * 2);
+  padding: 0 24px;
+  overflow-y: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 24px 0 24px;
+  position: fixed;
+  width: calc(100vw - 8px * 2);
+  left: 8px;
+  top: 8px;
+}
 nav .nav_col {
   font-family: "Dela Gothic One", sans-serif;
 }
@@ -16,6 +49,7 @@ h1 {
   font-family: "Dela Gothic One", sans-serif;
   font-weight: 100;
   text-transform: uppercase;
+  border-radius: 40px;
 }
 #contactBtn.open {
   background-color: #ff3e00;

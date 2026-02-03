@@ -1,11 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Dela+Gothic+One&display=swap');
 
-//Fonts
+//FONTS
 $title-font: 'Dela Gothic One', sans-serif;
 $bread-font: 'Darker Grotesque', sans-serif;
 
-//Fomt weights
+//Font weights
 $font-weight-light: 100;
 
 //Text transformations
 $uppercase: uppercase;
+
+//COLORS
+$almost-black: #141414;
+
+//SPACINGS
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+$space-2xl: 40px;
+$space-3xl: 48px;
+$space-4xl: 64px;
+$space-5xl: 80px;
+$space-6xl: 96px;
