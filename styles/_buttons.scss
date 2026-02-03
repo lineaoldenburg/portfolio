@@ -1,7 +1,12 @@
+@import "./_variables";
+
 #contactBtn {
   background-color: #000;
   color: #fff;
   transition: all 0.3s ease;
+  font-family: $title-font;
+  font-weight: $font-weight-light;
+  text-transform: $uppercase;
 
   &.open {
     background-color: #ff3e00; // changes when contact is open

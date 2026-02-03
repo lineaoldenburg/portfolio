@@ -1,7 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Dela+Gothic+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Dela+Gothic+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Dela+Gothic+One&display=swap");
+nav .nav_col {
+  font-family: "Dela Gothic One", sans-serif;
+}
+
+h1 {
+  font-family: "Darker Grotesque", sans-serif;
+}
+
 #contactBtn {
   background-color: #000;
   color: #fff;
   transition: all 0.3s ease;
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
 }
 #contactBtn.open {
   background-color: #ff3e00;
