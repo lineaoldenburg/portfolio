@@ -1,0 +1,11 @@
+#contactBtn {
+  background-color: #000;
+  color: #fff;
+  transition: all 0.3s ease;
+
+  &.open {
+    background-color: #ff3e00; // changes when contact is open
+    color: #fff;
+    transform: scale(1.05);
+  }
+}
