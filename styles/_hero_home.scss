@@ -1,0 +1,45 @@
+@import "./_variables";
+
+#main_home {
+  min-height: calc(100vh - $space-sm);
+  inset: $space-sm;
+  position: fixed;
+  border-top-left-radius: $space-lg;
+  border-top-right-radius: $space-lg;
+  pointer-events: none;
+}
+
+.hero_bg {
+  width: calc(100vw - ($space-sm * 2));
+  position: fixed;
+  inset: $space-sm;
+  min-height: 110vh;
+  z-index: -9999;
+  background-image: url(../assets/test_bg.png);
+  background-size: cover;
+  pointer-events: none;
+  border-top-left-radius: $space-lg;
+  border-top-right-radius: $space-lg;
+  
+  // Default transition (for slow-hidden)
+  transition: opacity 2s ease;
+  
+  // Hint to browser for optimization
+  will-change: opacity;
+
+  /* ------------------------
+     FAST hide (contact open)
+  ------------------------ */
+  &.hidden {
+    transition: opacity 0.15s linear;
+    opacity: 0;
+  }
+
+  /* ------------------------
+     SLOW hide (scroll)
+  ------------------------ */
+  &.slow-hidden {
+    transition: opacity 2s linear;
+    opacity: 0;
+  }
+}

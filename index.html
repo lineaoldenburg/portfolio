@@ -1,32 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Linéa Oldenburg • UI web & frontend</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="styles/main.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <nav>
-            <div class="nav_col">This is navbar</div>
-            <div class="nav_col"></div>
-            <div class="nav_col">
-                <button id="contactBtn" aria-expanded="false"></button>
-            </div>
-        </nav>
-        <section id="main_home">
-            <h1>This is homepage</h1>
-        </section>
+      <nav>
+        <div class="nav_col __logo">
+          <h3>Linéa</h3>
+          <h3>Oldenburg</h3>
+          <p>UX / UI DESIGNER • WEBBUTVECKLARE</p>
+        </div>
+        <div class="nav_col"></div>
+        <div class="nav_col">
+          <button id="contactBtn" aria-expanded="false"></button>
+        </div>
+      </nav>
+      <section id="main_home">
+        <div class="hero_bg" id="hero_bg"></div>
+        <h1>This is homepage</h1>
+      </section>
 
-        <section id="main_contact" hidden>
-               <h1>This is contact-page</h1>
-        </section>
+      <section id="main_portfolio">
+        <h1>Portfolio</h1>
+      </section>
+
+      <section id="main_contact">
+        <h1>This is contact-page</h1>
+      </section>
     </main>
     <script src="./script/script.js"></script>
-</body>
-
+  </body>
 </html>

@@ -1,0 +1,23 @@
+@import "./_variables";
+
+#main_contact {
+  position: fixed;
+  background-color: rgb(242, 242, 242);
+  left: $space-sm;
+  top: $space-sm;
+  border-top-right-radius: $space-lg;
+  border-top-left-radius: $space-lg;
+  width: calc(100vw - ($space-sm * 2));
+  min-height: 100vh;
+  padding-top: $navbar-height;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 100;
+  overflow-y: hidden;
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

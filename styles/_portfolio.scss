@@ -1,0 +1,8 @@
+@import "./_variables";
+
+#main_portfolio {
+  position: relative;
+  min-height: calc(100vh - $navbar-height);
+  margin-top: 100vh;
+  z-index: 9;
+}

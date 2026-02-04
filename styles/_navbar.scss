@@ -1,0 +1,19 @@
+@import "./_variables";
+
+nav {
+  display: flex;
+  height: $navbar-height;
+  justify-content: space-between;
+  padding: $space-lg $space-lg 0 $space-lg;
+  position: fixed;
+  width: calc(100vw - (#{$space-sm} * 2));
+  border-top-right-radius: $space-lg;
+  border-top-left-radius: $space-lg;
+  left: $space-sm;
+  top: $space-sm;
+  z-index: 999; 
+
+  .nav_col {
+    font-family: $title-font;
+  }
+}

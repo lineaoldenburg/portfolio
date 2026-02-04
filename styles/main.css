@@ -1,11 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Dela+Gothic+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Dela+Gothic+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Dela+Gothic+One&display=swap");
-*, *::before, *::after {
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Dela+Gothic+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Dela+Gothic+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Dela+Gothic+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Dela+Gothic+One&display=swap");
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol {
   margin: 0;
   padding: 0;
 }
@@ -15,27 +34,18 @@ body {
 }
 
 main {
-  background-color: white;
+  background-color: #D5B2CD;
   margin: 8px;
   border-radius: 24px;
   min-height: 110vh;
   position: fixed;
   width: calc(100vw - 8px * 2);
-  padding: 0 24px;
-  overflow-y: auto;
+  padding: 0;
+  overflow-y: scroll;
+  height: calc(100vh - 8px * 2);
 }
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 24px 24px 0 24px;
-  position: fixed;
-  width: calc(100vw - 8px * 2);
-  left: 8px;
-  top: 8px;
-}
-nav .nav_col {
-  font-family: "Dela Gothic One", sans-serif;
+main.contact-open {
+  overflow-y: hidden;
 }
 
 h1 {
@@ -55,6 +65,91 @@ h1 {
   background-color: #ff3e00;
   color: #fff;
   transform: scale(1.05);
+}
+
+#main_contact {
+  position: fixed;
+  background-color: rgb(242, 242, 242);
+  left: 8px;
+  top: 8px;
+  border-top-right-radius: 24px;
+  border-top-left-radius: 24px;
+  width: calc(100vw - 16px);
+  min-height: 100vh;
+  padding-top: 62px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 100;
+  overflow-y: hidden;
+}
+#main_contact.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#main_portfolio {
+  position: relative;
+  min-height: calc(100vh - 62px);
+  margin-top: 100vh;
+  z-index: 9;
+}
+
+#main_home {
+  min-height: calc(100vh - 8px);
+  inset: 8px;
+  position: fixed;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  pointer-events: none;
+}
+
+.hero_bg {
+  width: calc(100vw - 16px);
+  position: fixed;
+  inset: 8px;
+  min-height: 110vh;
+  z-index: -9999;
+  background-image: url(../assets/test_bg.png);
+  background-size: cover;
+  pointer-events: none;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  transition: opacity 2s ease;
+  will-change: opacity;
+  /* ------------------------
+     FAST hide (contact open)
+  ------------------------ */
+}
+.hero_bg.hidden {
+  transition: opacity 0.15s linear;
+  opacity: 0;
+}
+.hero_bg {
+  /* ------------------------
+     SLOW hide (scroll)
+  ------------------------ */
+}
+.hero_bg.slow-hidden {
+  transition: opacity 2s linear;
+  opacity: 0;
+}
+
+nav {
+  display: flex;
+  height: 62px;
+  justify-content: space-between;
+  padding: 24px 24px 0 24px;
+  position: fixed;
+  width: calc(100vw - 8px * 2);
+  border-top-right-radius: 24px;
+  border-top-left-radius: 24px;
+  left: 8px;
+  top: 8px;
+  z-index: 999;
+}
+nav .nav_col {
+  font-family: "Dela Gothic One", sans-serif;
 }
 
 /*# sourceMappingURL=main.css.map */
