@@ -18,6 +18,10 @@ nav {
     background-color: $almost-white;
   }
 
+  &.single {
+    background-color: $almost-white;
+  }
+
   .nav_col {
     font-family: $title-font;
 
@@ -33,6 +37,11 @@ nav {
         font-size: 14px;
         font-weight: 500;
       }
+    }
+
+    &.btns {
+      display: flex;
+      gap: $space-lg;
     }
   }
 }

@@ -37,7 +37,7 @@ body {
 }
 
 main {
-  background-color: #ececec;
+  background-color: #f3f3f3;
   margin: 8px;
   border-radius: 24px;
   min-height: 110vh;
@@ -52,7 +52,7 @@ main.contact-open {
 }
 
 h1 {
-  font-family: "Darker Grotesque", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 #contactBtn {
@@ -85,6 +85,50 @@ h1 {
   color: #fff;
 }
 
+.social_dropdown {
+  display: none;
+}
+
+#navBtn:hover .social_dropdown {
+  display: block;
+}
+
+#navBtn {
+  background-color: transparent;
+  font-family: "Dela Gothic One", sans-serif;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+#navBtn:hover {
+  text-shadow: 1px 1px 0px rgb(152, 9, 95);
+  transform: translateY(-1px);
+  transform: translateX(-1px);
+}
+#navBtn:hover .social_dropdown {
+  display: block;
+}
+
+.expand-btn {
+  background: #141414;
+  color: #D5B2CD;
+  font-family: "Dela Gothic One", sans-serif;
+  width: auto;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  border: none;
+  max-width: 182px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.expand-btn:hover {
+  background: #555;
+  transform: translateY(-2px);
+}
+
 #main_contact {
   position: fixed;
   background-color: rgb(242, 242, 242);
@@ -106,22 +150,251 @@ h1 {
   pointer-events: auto;
 }
 
+.portfolio_nav_single {
+  position: sticky;
+  top: 65px;
+  background: transparent;
+  padding: 16px 0 0 0;
+  z-index: 1;
+}
+.portfolio_nav_single h1 {
+  font-family: "Dela Gothic One", sans-serif;
+  text-transform: uppercase;
+  font-size: 22px;
+  color: #141414;
+  margin: 0;
+  padding: 0;
+}
+.portfolio_nav_single.scrolled {
+  background-color: #f3f3f3;
+}
+.portfolio_nav_single .portfolio_nav_container {
+  background-color: #FFCC00;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 82px;
+  padding: 24px;
+}
+
+#main_portfolio_single {
+  position: relative;
+  border-radius: 24px;
+  height: auto;
+  z-index: 9;
+  max-width: 1200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  margin-top: 82px;
+  padding-bottom: 202px;
+}
+
+/* Portfolio Item */
+.portfolio-item_single {
+  position: relative;
+  transition: all 0.4s ease;
+  /* Hidden state for filtering */
+}
+.portfolio-item_single.hidden {
+  display: none;
+}
+
+/*Process bar*/
+.process_bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0;
+}
+.process_bar .process_arrow {
+  opacity: 0.2;
+}
+.process_bar .process_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  opacity: 0.6;
+}
+.process_bar .process_item h1 {
+  font-size: 42px;
+}
+.process_bar .process_item p {
+  font-family: "Dela Gothic One", sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.snapshots {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.snapshots .snapshot_item {
+  width: 1200px;
+  display: flex;
+  gap: 24px;
+}
+.snapshots .snapshot_item.img .img_box {
+  width: 50%;
+  padding: 16px;
+  background-color: #EBEBEB;
+}
+.snapshots .snapshot_item.img .img_box img {
+  width: 100%;
+  border-radius: 12px;
+}
+.snapshots .snapshot_item.full .img_box {
+  width: 100%;
+  padding: 16px;
+  background-color: #EBEBEB;
+}
+.snapshots .snapshot_item.full .img_box img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.portfolio-card_single {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  min-height: 450px;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+.portfolio-card_single .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 96px;
+  width: 40%;
+  min-height: 450px;
+}
+.portfolio-card_single .portfolio-thumbnail-wrapper {
+  width: 100%;
+  height: auto;
+}
+.portfolio-card_single .portfolio-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: top;
+  display: block;
+}
+.portfolio-card_single h3 {
+  font-size: 32px;
+  color: rgb(0, 0, 0);
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 300;
+  margin: 0;
+}
+.portfolio-card_single h2 {
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.portfolio-card_single .portfolio-excerpt {
+  color: rgb(0, 0, 0);
+  padding: 24px 0 0 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  padding: 16px 0;
+  font-size: 14px;
+  margin: 0;
+}
+.portfolio-card_single a .expand-btn {
+  background: #141414;
+  color: #D5B2CD;
+  font-family: "Dela Gothic One", sans-serif;
+  width: 222px;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  border: none;
+  max-width: 182px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.portfolio-card_single a .expand-btn:hover {
+  background: #555;
+  transform: translateY(-2px);
+}
+.portfolio-card_single .overview_about {
+  width: 100%;
+  display: flex;
+  gap: 24px;
+  padding: 24px 0;
+}
+.portfolio-card_single .overview_about h1:first-child {
+  padding-top: 0;
+}
+.portfolio-card_single .overview_about h1 {
+  text-transform: none;
+  font-weight: 100;
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: #141414;
+  margin: 0;
+  padding-top: 24px;
+}
+.portfolio-card_single .overview_about h2 {
+  padding-top: 24px;
+  font-family: "Dela Gothic One", sans-serif;
+  opacity: 1;
+  color: black;
+}
+.portfolio-card_single .overview_about p {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0.7;
+}
+.portfolio-card_single .overview_about p.info {
+  font-size: 8px;
+  font-style: italic;
+  opacity: 0.6;
+  margin: 24px 0;
+}
+.portfolio-card_single .overview_about .left_col {
+  width: 30%;
+}
+.portfolio-card_single .overview_about .left_col p {
+  padding-top: 4px;
+  text-transform: uppercase;
+}
+.portfolio-card_single .overview_about .right_col {
+  width: 70%;
+}
+.portfolio-card_single .overview_about .right_col p {
+  padding-top: 16px;
+}
+
 #main_portfolio {
   position: relative;
   border-radius: 24px;
   height: auto;
   z-index: 9;
-  padding: 0 768px;
+  max-width: 1200px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: transparent;
   margin-top: 100vh;
-}
-#main_portfolio h1 {
-  font-family: "Dela Gothic One", sans-serif;
-  text-transform: uppercase;
-  font-size: 22px;
-  color: #D5B2CD;
-  margin: 0;
-  padding: 0;
+  padding-bottom: 202px;
 }
 
 /* ==========================
@@ -132,10 +405,18 @@ h1 {
   top: 82px;
   background: transparent;
   padding: 16px 0 0 0;
-  z-index: 100;
+  z-index: 1;
+}
+.portfolio_nav h1 {
+  font-family: "Dela Gothic One", sans-serif;
+  text-transform: uppercase;
+  font-size: 22px;
+  color: #D5B2CD;
+  margin: 0;
+  padding: 0;
 }
 .portfolio_nav.scrolled {
-  background-color: #ececec;
+  background-color: #f3f3f3;
 }
 .portfolio_nav .portfolio_nav_container {
   background-color: #141414;
@@ -144,7 +425,6 @@ h1 {
   align-items: center;
   height: 82px;
   padding: 24px;
-  border: 1px solid #141414;
 }
 
 /* Filter Buttons */
@@ -214,7 +494,6 @@ h1 {
 /* Portfolio Card (Collapsed State) */
 .portfolio-card {
   background: white;
-  border: 1px solid #141414;
   display: flex;
   min-height: 450px;
   padding: 0;
@@ -226,9 +505,9 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 64px;
+  padding: 0 96px;
   width: 40%;
-  min-height: 450px;
+  min-height: 480px;
 }
 .portfolio-card .portfolio-thumbnail-wrapper {
   width: 60%;
@@ -237,8 +516,10 @@ h1 {
 .portfolio-card .portfolio-thumbnail {
   width: 100%;
   height: 100%;
+  position: center;
   object-fit: cover;
   display: block;
+  min-height: 480px;
 }
 .portfolio-card h3 {
   font-size: 32px;
@@ -250,23 +531,33 @@ h1 {
 .portfolio-card h2 {
   margin: 0;
   padding: 0;
-  color: rgba(0, 0, 0, 0.378);
-  font-family: "Darker Grotesque", sans-serif;
-  font-size: 18px;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
   text-transform: uppercase;
 }
 .portfolio-card .portfolio-excerpt {
   color: rgb(0, 0, 0);
   padding: 24px 0 0 0;
-  font-family: "Darker Grotesque", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 300;
+  padding: 16px 0;
+  font-size: 14px;
+  margin: 0;
 }
 .portfolio-card .expand-btn {
-  background: #333;
-  color: #fff;
-  width: 222px;
+  background: #141414;
+  color: #D5B2CD;
+  font-family: "Dela Gothic One", sans-serif;
+  width: auto;
+  padding: 8px 16px;
+  text-transform: uppercase;
   border: none;
-  border-radius: 24px;
+  max-width: 182px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -277,17 +568,19 @@ h1 {
 
 /* Portfolio Expanded (Full Width State) */
 .portfolio-expanded {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 0px;
   left: 0;
   width: 100%;
+  height: 100vh;
   background: #fff;
-  border-radius: 12px;
   padding: 2rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  max-height: 80vh;
+  overflow: scroll;
 }
 .portfolio-expanded .close-btn {
   position: absolute;
@@ -481,7 +774,10 @@ nav {
   transition: background-color 0.1s ease;
 }
 nav.scrolled {
-  background-color: #ececec;
+  background-color: #f3f3f3;
+}
+nav.single {
+  background-color: #f3f3f3;
 }
 nav .nav_col {
   font-family: "Dela Gothic One", sans-serif;
@@ -492,9 +788,13 @@ nav .nav_col.logo h3 {
   line-height: 1.3;
 }
 nav .nav_col.logo p {
-  font-family: "Darker Grotesque", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 500;
+}
+nav .nav_col.btns {
+  display: flex;
+  gap: 24px;
 }
 
 /* Starting states (visible) */
