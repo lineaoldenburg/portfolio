@@ -1,17 +1,33 @@
 @import "./_variables";
 
 #contactBtn {
-  background-color: #000;
-  color: #fff;
+  background-color: $almost-black;
+  color: $almost-pink;
   transition: all 0.3s ease;
   font-family: $title-font;
   font-weight: $font-weight-light;
   text-transform: $uppercase;
   border-radius: $space-2xl;
+  font-size: 22px;
+  border: none;
+  outline: none;
+  padding: $space-sm $space-md;
+  width: 222px;
+  font-weight: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 52px;
+  cursor: pointer;
+  transition: none;
+
+  &:hover {
+    background-color: $almost-pink;
+    color: $almost-black;
+  }
 
   &.open {
-    background-color: #ff3e00; // changes when contact is open
+    background-color: #ff3e00; 
     color: #fff;
-    transform: scale(1.05);
   }
 }

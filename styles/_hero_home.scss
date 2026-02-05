@@ -1,7 +1,8 @@
 @import "./_variables";
 
 #main_home {
-  min-height: calc(100vh - $space-sm);
+  height: calc(100vh - $space-sm);
+  width: 100%;
   inset: $space-sm;
   position: fixed;
   border-top-left-radius: $space-lg;
@@ -15,15 +16,15 @@
   inset: $space-sm;
   min-height: 110vh;
   z-index: -9999;
-  background-image: url(../assets/lighter_bg.png);
+  background-image: url(../assets/bg.png);
   background-size: cover;
   pointer-events: none;
   border-top-left-radius: $space-lg;
   border-top-right-radius: $space-lg;
-  
+
   // Default transition (for slow-hidden)
-  transition: opacity 2s ease;
-  
+  transition: opacity 0.6s ease;
+
   // Hint to browser for optimization
   will-change: opacity;
 
@@ -39,7 +40,101 @@
      SLOW hide (scroll)
   ------------------------ */
   &.slow-hidden {
-    transition: opacity 2s linear;
+    transition: opacity 0.6s linear;
     opacity: 0;
+  }
+}
+
+.hero_text_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  z-index: -1;
+}
+
+.hero_text {
+  font-family: $title-font;
+  font-size: 2vw;
+  line-height: 0.8;
+  font-weight: 50;
+  color: white;
+  text-transform: uppercase;
+  margin-top: -300px;
+
+  h1 {
+    padding: 0;
+    margin: 0;
+    font-family: $title-font;
+  }
+
+  &.back_left {
+    text-align: right;
+
+    h1:nth-child(1) {
+      padding-right: 12%;
+    }
+
+    h1:nth-child(2) {
+      padding-right: 8%;
+    }
+
+    h1:nth-child(3) {
+      padding-right: 38%;
+    }
+
+  }
+
+  &.back_right {
+    text-align: left;
+
+    h1:nth-child(1) {
+      padding-left: 8%;
+    }
+
+    h1:nth-child(2) {
+      padding-left: 8%;
+    }
+
+  }
+}
+
+.top_text {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 1.5vw;
+  top: 58%;
+  margin: 0 auto;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  color: $almost-pink;
+  text-transform: uppercase;
+ text-shadow: 5px 2px 0px rgb(152, 9, 95);
+  line-height: 1;
+  
+  h1 {
+    font-family: $title-font;
+  }
+}
+
+.profile_img_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  .profile_img {
+    height: 100%;
+    filter: blur(22px);
+    margin-bottom: -82px;
   }
 }

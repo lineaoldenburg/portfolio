@@ -5,6 +5,9 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body,
@@ -32,15 +35,15 @@ body {
 }
 
 main {
-  background-color: $almost-pink;
+  background-color: $almost-white;
   margin: $space-sm;
   border-radius: $space-lg;
   min-height: 110vh;
   position: fixed;
   width: calc(100vw - (#{$space-sm} * 2));
   padding: 0;
-  overflow-y: scroll;
-  height: calc(100vh - (#{$space-sm} * 2));
+  overflow-y: auto;
+  height: calc(110vh - (#{$space-sm} * 2));
 
   &.contact-open {
     overflow-y: hidden;

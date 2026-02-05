@@ -1,42 +1,230 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Linéa Oldenburg • UI web & frontend</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="styles/main.css" />
-  </head>
 
-  <body>
-    <main>
-      <nav>
-        <div class="nav_col __logo">
-          <h3>Linéa</h3>
-          <h3>Oldenburg</h3>
-          <p>UX / UI DESIGNER • WEBBUTVECKLARE</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linéa Oldenburg • UI web & frontend</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body>
+  <main>
+    <nav>
+      <div class="nav_col logo">
+        <h3>Linéa</h3>
+        <h3>Oldenburg</h3>
+        <p>UX / UI DESIGNER • WEBBUTVECKLARE</p>
+      </div>
+      <div class="nav_col"></div>
+      <div class="nav_col">
+        <button id="contactBtn" aria-expanded="false"></button>
+      </div>
+    </nav>
+    <section id="main_home">
+
+      <div class="profile_img_container fade_blur">
+        <img src="assets/Me.png" class="profile_img" alt="">
+      </div>
+
+      <div class="top_text fade_bottom">
+        <h1>You might wanna scroll for more</h1>
+      </div>
+
+      <div class="hero_bg" id="hero_bg"></div>
+
+
+      <div class="hero_text_container">
+
+        <div class="hero_text back_left fade_left">
+          <h1>React</h1>
+          <h1>Frontend</h1>
+          <h1>Illustraror</h1>
+          <h1>Html Css</h1>
+
+          <h1>Js Ts</h1>
         </div>
-        <div class="nav_col"></div>
-        <div class="nav_col">
-          <button id="contactBtn" aria-expanded="false"></button>
+
+        <div class="hero_text back_right fade_right">
+          <h1>Figma</h1>
+          <h1>Photoshop</h1>
+          <h1>Javascript</h1>
+          <h1>Angular</h1>
+          <h1>Ux Ui</h1>
         </div>
-      </nav>
-      <section id="main_home">
-        <div class="hero_bg" id="hero_bg"></div>
-        <h1>This is homepage</h1>
-      </section>
 
-      <section id="main_portfolio">
-        <h1>Portfolio</h1>
-      </section>
+      </div>
 
-      <section id="main_contact">
-        <h1>This is contact-page</h1>
-      </section>
-    </main>
-    <script src="./script/script.js"></script>
-  </body>
+    </section>
+    <section id="main_portfolio">
+
+      <div class="portfolio-nav-sentinel"></div>
+      <div class="portfolio_nav">
+
+        <div class="portfolio_nav_container">
+          <h1><i class="fa-solid fa-folder-open"></i></h1>
+          <h1> Portfolio</h1>
+          <h1><i class="fa-solid fa-face-grin-wide"></i></h1>
+
+          <!-- Filter Buttons 
+  <div class="portfolio-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="web">Web</button>
+    <button class="filter-btn" data-filter="design">Design</button>
+    <button class="filter-btn" data-filter="branding">Branding</button>
+  </div>
+  -->
+        </div>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="portfolio-grid">
+
+        <!-- Portfolio Item 1 -->
+        <article class="portfolio-item" data-category="web">
+          <div class="portfolio-card">
+
+            <div class="portfolio-thumbnail-wrapper">
+              <img src="assets/Onsocial.png" alt="Project 1" class="portfolio-thumbnail">
+            </div>
+
+            <div class="text">
+              <h3>Onsocial</h3>
+              <h2>UX & UI</h2>
+              <p class="portfolio-excerpt">Brief description of the project...</p>
+              <button class="expand-btn">View More</button>
+            </div>
+          </div>
+
+          <div class="portfolio-expanded">
+            <button class="close-btn"><i class="fas fa-times"></i></button>
+            <div class="expanded-content">
+              <h2>The Onsocial Project</h2>
+              <img src="assets/green_spirit.png" alt="Project 1 Full">
+              <p>Full detailed description of the project. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <img src="project1-detail.jpg" alt="Project 1 Detail">
+              <p>More content, process, results, etc.</p>
+              <a href="#" class="project-link">Visit Project</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Portfolio Item 2 -->
+        <article class="portfolio-item" data-category="design">
+          <div class="portfolio-card">
+
+            <div class="portfolio-thumbnail-wrapper">
+            <img src="assets/green_spirit.png" alt="Project 2" class="portfolio-thumbnail">
+            </div>
+
+            <div class="text">
+            <h3>Lyngdorf</h3>
+            <h2>Figma React</h2>
+            <p class="portfolio-excerpt">Brief description of the project...</p>
+            <button class="expand-btn">View More</button>
+            </div>
+          </div>
+
+          <div class="portfolio-expanded">
+            <button class="close-btn"><i class="fas fa-times"></i></button>
+            <div class="expanded-content">
+              <h2>Project Title 2</h2>
+              <img src="assets/green_spirit.png" alt="Project 2 Full">
+              <p>Full detailed description...</p>
+            </div>
+          </div>
+        </article>
+
+            <!-- Portfolio Item 2 -->
+        <article class="portfolio-item" data-category="design">
+          <div class="portfolio-card">
+
+            <div class="portfolio-thumbnail-wrapper">
+            <img src="assets/green_spirit.png" alt="Project 2" class="portfolio-thumbnail">
+            </div>
+
+            <div class="text">
+            <h3>Magic 8 Ball</h3>
+            <h2>Figma React</h2>
+            <p class="portfolio-excerpt">Brief description of the project...</p>
+            <button class="expand-btn">View More</button>
+            </div>
+          </div>
+
+          <div class="portfolio-expanded">
+            <button class="close-btn"><i class="fas fa-times"></i></button>
+            <div class="expanded-content">
+              <h2>Project Title 2</h2>
+              <img src="assets/green_spirit.png" alt="Project 2 Full">
+              <p>Full detailed description...</p>
+            </div>
+          </div>
+        </article>
+
+            <!-- Portfolio Item 2 -->
+        <article class="portfolio-item" data-category="design">
+          <div class="portfolio-card">
+
+            <div class="portfolio-thumbnail-wrapper">
+            <img src="assets/green_spirit.png" alt="Project 2" class="portfolio-thumbnail">
+            </div>
+
+            <div class="text">
+            <h3>Tona Photo</h3>
+            <h2>Figma React</h2>
+            <p class="portfolio-excerpt">Brief description of the project...</p>
+            <button class="expand-btn">View More</button>
+            </div>
+          </div>
+
+          <div class="portfolio-expanded">
+            <button class="close-btn"><i class="fas fa-times"></i></button>
+            <div class="expanded-content">
+              <h2>Project Title 2</h2>
+              <img src="assets/green_spirit.png" alt="Project 2 Full">
+              <p>Full detailed description...</p>
+            </div>
+          </div>
+        </article>
+
+            <!-- Portfolio Item 2 -->
+        <article class="portfolio-item" data-category="design">
+          <div class="portfolio-card">
+
+            <div class="portfolio-thumbnail-wrapper">
+            <img src="assets/green_spirit.png" alt="Project 2" class="portfolio-thumbnail">
+            </div>
+
+            <div class="text">
+            <h3>Green Spirit</h3>
+            <h2>Figma React</h2>
+            <p class="portfolio-excerpt">Brief description of the project...</p>
+            <button class="expand-btn">View More</button>
+            </div>
+          </div>
+
+          <div class="portfolio-expanded">
+            <button class="close-btn"><i class="fas fa-times"></i></button>
+            <div class="expanded-content">
+              <h2>Project Title 2</h2>
+              <img src="assets/green_spirit.png" alt="Project 2 Full">
+              <p>Full detailed description...</p>
+            </div>
+          </div>
+        </article>
+
+  
+
+      </div>
+    </section>
+
+    <section id="main_contact">
+      <h1>This is contact-page</h1>
+    </section>
+  </main>
+  <script src="./script/script.js"></script>
+</body>
+
 </html>

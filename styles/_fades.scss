@@ -1,0 +1,12 @@
+/* Starting states (visible) */
+.fade_left { transform: translateX(0); opacity: 1; transition: transform 0.6s ease, opacity 0.6s ease; }
+.fade_right { transform: translateX(0); opacity: 1; transition: transform 0.6s ease, opacity 0.6s ease; }
+.fade_out { opacity: 1; transition: opacity 0.6s ease; }
+.fade_bottom { translate: 0 0; opacity: 1; transition: translate 0.6s ease, opacity 0.6s ease; }
+.fade_blur { filter: blur(0px); opacity: 1; transition: filter 0.7s ease, opacity 0.7s ease; }
+
+body.scrolled-hero .fade_left { transform: translateX(-120px); opacity: 0; }
+body.scrolled-hero .fade_right { transform: translateX(120px); opacity: 0; }
+body.scrolled-hero .fade_out { opacity: 0; }
+body.scrolled-hero .fade_bottom { translate: 0 280px; opacity: 0; }
+body.scrolled-hero .fade_blur { filter: blur(90px); opacity: 0; }

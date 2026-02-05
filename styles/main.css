@@ -9,6 +9,9 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body,
@@ -34,15 +37,15 @@ body {
 }
 
 main {
-  background-color: #D5B2CD;
+  background-color: #ececec;
   margin: 8px;
   border-radius: 24px;
   min-height: 110vh;
   position: fixed;
   width: calc(100vw - 8px * 2);
   padding: 0;
-  overflow-y: scroll;
-  height: calc(100vh - 8px * 2);
+  overflow-y: auto;
+  height: calc(110vh - 8px * 2);
 }
 main.contact-open {
   overflow-y: hidden;
@@ -53,18 +56,33 @@ h1 {
 }
 
 #contactBtn {
-  background-color: #000;
-  color: #fff;
+  background-color: #141414;
+  color: #D5B2CD;
   transition: all 0.3s ease;
   font-family: "Dela Gothic One", sans-serif;
   font-weight: 100;
   text-transform: uppercase;
   border-radius: 40px;
+  font-size: 22px;
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  width: 222px;
+  font-weight: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 52px;
+  cursor: pointer;
+  transition: none;
+}
+#contactBtn:hover {
+  background-color: #D5B2CD;
+  color: #141414;
 }
 #contactBtn.open {
   background-color: #ff3e00;
   color: #fff;
-  transform: scale(1.05);
 }
 
 #main_contact {
@@ -76,7 +94,7 @@ h1 {
   border-top-left-radius: 24px;
   width: calc(100vw - 16px);
   min-height: 100vh;
-  padding-top: 62px;
+  padding-top: 82px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease-in-out;
@@ -90,13 +108,244 @@ h1 {
 
 #main_portfolio {
   position: relative;
-  min-height: calc(100vh - 62px);
-  margin-top: 100vh;
+  border-radius: 24px;
+  height: auto;
   z-index: 9;
+  padding: 0 768px;
+  background-color: transparent;
+  margin-top: 100vh;
+}
+#main_portfolio h1 {
+  font-family: "Dela Gothic One", sans-serif;
+  text-transform: uppercase;
+  font-size: 22px;
+  color: #D5B2CD;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================
+   PORTFOLIO SECTION
+========================== */
+.portfolio_nav {
+  position: sticky;
+  top: 82px;
+  background: transparent;
+  padding: 16px 0 0 0;
+  z-index: 100;
+}
+.portfolio_nav.scrolled {
+  background-color: #ececec;
+}
+.portfolio_nav .portfolio_nav_container {
+  background-color: #141414;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 82px;
+  padding: 24px;
+  border: 1px solid #141414;
+}
+
+/* Filter Buttons */
+.portfolio-filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border: 2px solid #333;
+  background: transparent;
+  color: #333;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+.filter-btn:hover {
+  background: #333;
+  color: #fff;
+}
+.filter-btn.active {
+  background: #333;
+  color: #fff;
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+  padding-top: 24px;
+}
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Portfolio Item */
+.portfolio-item {
+  position: relative;
+  transition: all 0.4s ease;
+  /* Hidden state for filtering */
+}
+.portfolio-item.hidden {
+  display: none;
+}
+.portfolio-item {
+  /* Expanded state */
+}
+.portfolio-item.expanded {
+  grid-column: 1/-1;
+  z-index: 10;
+}
+.portfolio-item.expanded .portfolio-card {
+  opacity: 0;
+  pointer-events: none;
+}
+.portfolio-item.expanded .portfolio-expanded {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Portfolio Card (Collapsed State) */
+.portfolio-card {
+  background: white;
+  border: 1px solid #141414;
+  display: flex;
+  min-height: 450px;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+.portfolio-card .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 64px;
+  width: 40%;
+  min-height: 450px;
+}
+.portfolio-card .portfolio-thumbnail-wrapper {
+  width: 60%;
+  height: 450px;
+}
+.portfolio-card .portfolio-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.portfolio-card h3 {
+  font-size: 32px;
+  color: rgb(0, 0, 0);
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 300;
+  margin: 0;
+}
+.portfolio-card h2 {
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.378);
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.portfolio-card .portfolio-excerpt {
+  color: rgb(0, 0, 0);
+  padding: 24px 0 0 0;
+  font-family: "Darker Grotesque", sans-serif;
+  font-weight: 300;
+}
+.portfolio-card .expand-btn {
+  background: #333;
+  color: #fff;
+  width: 222px;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.portfolio-card .expand-btn:hover {
+  background: #555;
+  transform: translateY(-2px);
+}
+
+/* Portfolio Expanded (Full Width State) */
+.portfolio-expanded {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.portfolio-expanded .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+.portfolio-expanded .close-btn:hover {
+  background: #555;
+  transform: rotate(90deg);
+}
+.portfolio-expanded .expanded-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.portfolio-expanded .expanded-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.portfolio-expanded .expanded-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+.portfolio-expanded .expanded-content p {
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+.portfolio-expanded .expanded-content .project-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+}
+.portfolio-expanded .expanded-content .project-link:hover {
+  background: #555;
+  transform: translateY(-2px);
 }
 
 #main_home {
-  min-height: calc(100vh - 8px);
+  height: calc(100vh - 8px);
+  width: 100%;
   inset: 8px;
   position: fixed;
   border-top-left-radius: 24px;
@@ -110,12 +359,12 @@ h1 {
   inset: 8px;
   min-height: 110vh;
   z-index: -9999;
-  background-image: url(../assets/lighter_bg.png);
+  background-image: url(../assets/bg.png);
   background-size: cover;
   pointer-events: none;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
-  transition: opacity 2s ease;
+  transition: opacity 0.6s ease;
   will-change: opacity;
   /* ------------------------
      FAST hide (contact open)
@@ -131,13 +380,95 @@ h1 {
   ------------------------ */
 }
 .hero_bg.slow-hidden {
-  transition: opacity 2s linear;
+  transition: opacity 0.6s linear;
   opacity: 0;
+}
+
+.hero_text_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  z-index: -1;
+}
+
+.hero_text {
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 2vw;
+  line-height: 0.8;
+  font-weight: 50;
+  color: white;
+  text-transform: uppercase;
+  margin-top: -300px;
+}
+.hero_text h1 {
+  padding: 0;
+  margin: 0;
+  font-family: "Dela Gothic One", sans-serif;
+}
+.hero_text.back_left {
+  text-align: right;
+}
+.hero_text.back_left h1:nth-child(1) {
+  padding-right: 12%;
+}
+.hero_text.back_left h1:nth-child(2) {
+  padding-right: 8%;
+}
+.hero_text.back_left h1:nth-child(3) {
+  padding-right: 38%;
+}
+.hero_text.back_right {
+  text-align: left;
+}
+.hero_text.back_right h1:nth-child(1) {
+  padding-left: 8%;
+}
+.hero_text.back_right h1:nth-child(2) {
+  padding-left: 8%;
+}
+
+.top_text {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 1.5vw;
+  top: 58%;
+  margin: 0 auto;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #D5B2CD;
+  text-transform: uppercase;
+  text-shadow: 5px 2px 0px rgb(152, 9, 95);
+  line-height: 1;
+}
+.top_text h1 {
+  font-family: "Dela Gothic One", sans-serif;
+}
+
+.profile_img_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.profile_img_container .profile_img {
+  height: 100%;
+  filter: blur(22px);
+  margin-bottom: -82px;
 }
 
 nav {
   display: flex;
-  height: 62px;
+  height: 82px;
   justify-content: space-between;
   padding: 24px 24px 0 24px;
   position: fixed;
@@ -147,9 +478,77 @@ nav {
   left: 8px;
   top: 8px;
   z-index: 999;
+  transition: background-color 0.1s ease;
+}
+nav.scrolled {
+  background-color: #ececec;
 }
 nav .nav_col {
   font-family: "Dela Gothic One", sans-serif;
+}
+nav .nav_col.logo h3 {
+  text-transform: uppercase;
+  margin-top: -4px;
+  line-height: 1.3;
+}
+nav .nav_col.logo p {
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Starting states (visible) */
+.fade_left {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.fade_right {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.fade_out {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.fade_bottom {
+  translate: 0 0;
+  opacity: 1;
+  transition: translate 0.6s ease, opacity 0.6s ease;
+}
+
+.fade_blur {
+  filter: blur(0px);
+  opacity: 1;
+  transition: filter 0.7s ease, opacity 0.7s ease;
+}
+
+body.scrolled-hero .fade_left {
+  transform: translateX(-120px);
+  opacity: 0;
+}
+
+body.scrolled-hero .fade_right {
+  transform: translateX(120px);
+  opacity: 0;
+}
+
+body.scrolled-hero .fade_out {
+  opacity: 0;
+}
+
+body.scrolled-hero .fade_bottom {
+  translate: 0 280px;
+  opacity: 0;
+}
+
+body.scrolled-hero .fade_blur {
+  filter: blur(90px);
+  opacity: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
