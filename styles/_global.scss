@@ -10,6 +10,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Prevent visual scroll jump during scroll restoration */
+html.restoring-scroll {
+  /* Optional: hide content briefly while scroll is being set */
+  /* Uncomment if you still see scrolling */
+  /* visibility: hidden; */
+}
+
+/* Alternative approach: prevent scroll snapping during restoration */
+html.restoring-scroll main {
+  scroll-behavior: auto !important;
+}
+
 body,
 h1,
 h2,
@@ -43,6 +55,7 @@ main {
   width: calc(100vw - (#{$space-sm} * 2));
   padding: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   height: calc(110vh - (#{$space-sm} * 2));
 
   &.contact-open {
@@ -53,8 +66,5 @@ main {
 h1 {
   font-family: $bread-font;
 }
-
-
-
 
 

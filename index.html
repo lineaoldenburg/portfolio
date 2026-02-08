@@ -1,223 +1,449 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linéa Oldenburg • UI web & frontend</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Linéa Oldenburg • UI web & frontend</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles/main.css" />
-</head>
+    <!-- Preconnect: Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-<body>
-  <main>
-    <nav>
-      <div class="nav_col logo">
-        <h3>Linéa</h3>
-        <h3>Oldenburg</h3>
-        <p>UX / UI DESIGNER • WEBBUTVECKLARE</p>
-      </div>
-      <div class="nav_col"></div>
-      <div class="nav_col btns">
-         <button id="navBtn">SOCIAL</button>
-         <div class="social_dropdown"><ul><li>Github</li></ul></div>
-        <button id="navBtn">RESUME</button>
-        <button id="contactBtn" aria-expanded="false"></button>
-      </div>
-    </nav>
-    <section id="main_home">
+    <!-- Google Fonts (trimmed weights) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;600;800&family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
 
-      <div class="profile_img_container fade_blur">
-        <img src="assets/Me.png" class="profile_img" alt="">
-      </div>
+    <!-- Font Awesome (non-blocking) -->
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      />
+    </noscript>
 
-      <div class="top_text fade_bottom">
-        <h1>You might wanna scroll for more</h1>
-      </div>
+    <!-- Main CSS (non-blocking) -->
+    <link
+      rel="preload"
+      href="styles/main.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="styles/main.css" />
+    </noscript>
 
-      <div class="hero_bg" id="hero_bg"></div>
+    <!-- Critical images -->
+    <link rel="preload" as="image" href="assets/bg.png" />
+    <link rel="preload" as="image" href="assets/Me.png" />
+  </head>
 
-
-      <div class="hero_text_container">
-
-        <div class="hero_text back_left fade_left">
-          <h1>React</h1>
-          <h1>Frontend</h1>
-          <h1>Illustraror</h1>
-          <h1>Html Css</h1>
-
-          <h1>Js Ts</h1>
+  <body>
+    <main>
+      <!-- NAV -->
+      <nav>
+        <div class="nav_col logo" id="logo">
+          <h3>Linéa</h3>
+          <h3>Oldenburg</h3>
+          <p>UX / UI DESIGNER • WEBBUTVECKLARE</p>
         </div>
 
-        <div class="hero_text back_right fade_right">
-          <h1>Figma</h1>
-          <h1>Photoshop</h1>
-          <h1>Javascript</h1>
-          <h1>Angular</h1>
-          <h1>Ux Ui</h1>
+        <div class="nav_col"></div>
+
+        <div class="nav_col btns desktop-nav">
+         
+
+          <button id="resumeBtn" class="navBtn">RESUME</button>
+
+           <div class="social-wrapper">
+            <button id="navBtn" class="social-btn">SOCIAL <i class="fa-solid fa-angle-down"></i></button>
+            <div class="social_dropdown">
+              <ul>
+                <li>
+                  <a href="#" target="_blank">
+                    <i class="fa-brands fa-github"></i> Github
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <button id="contactBtn" aria-expanded="false"></button>
         </div>
 
-      </div>
+        <button
+          class="hamburger-btn mobile-nav"
+          aria-label="Menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </nav>
 
-    </section>
-    <section id="main_portfolio">
+      <!-- MOBILE MENU -->
+      <div class="mobile-menu">
+        <div class="mobile-menu-content">
+          <button id="mobileContactBtn" class="mobile-menu-item">
+            <i class="fa-solid fa-face-smile"></i>
+            <span>Contact</span>
+          </button>
 
-      <div class="portfolio-nav-sentinel"></div>
-      <div class="portfolio_nav">
+          <button id="mobileResumeBtn" class="mobile-menu-item">
+            <i class="fa-solid fa-file-lines"></i>
+            <span>Resume</span>
+          </button>
 
-        <div class="portfolio_nav_container">
-          <h1><i class="fa-solid fa-folder-open"></i></h1>
-          <h1> Portfolio</h1>
-          <h1><i class="fa-solid fa-face-grin-wide"></i></h1>
-
-          <!-- Filter Buttons 
-  <div class="portfolio-filters">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="web">Web</button>
-    <button class="filter-btn" data-filter="design">Design</button>
-    <button class="filter-btn" data-filter="branding">Branding</button>
-  </div>
-  -->
+          <div class="mobile-social-section">
+            <h4>Social Links</h4>
+            <ul class="mobile-social-list">
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fa-brands fa-github"></i>
+                  <span>Github</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fa-brands fa-linkedin"></i>
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fa-brands fa-instagram"></i>
+                  <span>Instagram</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <!-- Portfolio Grid -->
-      <div class="portfolio-grid">
+      <!-- HERO -->
+      <section id="main_home">
+        <div class="profile_img_container fade_blur">
+          <img
+            src="assets/Me.png"
+            class="profile_img"
+            alt="Portrait of Linéa Oldenburg"
+          />
+        </div>
 
-        <!-- Portfolio Item 1 -->
-        <article class="portfolio-item" data-category="web">
-          <div class="portfolio-card">
+        <div class="top_text fade_bottom">
+          <h1>You might wanna scroll for more</h1>
+        </div>
 
-            <div class="portfolio-thumbnail-wrapper">
-              <img src="assets/air_onsocial.png" alt="Project 1" class="portfolio-thumbnail">
-            </div>
+        <div class="hero_bg" id="hero_bg"></div>
 
-            <div class="text">  <h2>UX | UI | FIGMA | REACT</h2>
-              <h3>Onsocial</h3>
-            
-              <p class="portfolio-excerpt">Java React Social app, worked in a team of 4 using GIT & Google meets. This was a Jensen Education Project.</p>
-              <a href="portfolio_item.html" target="_blank"><button class="expand-btn">View More <i class="fa-solid fa-arrow-right"></i></button></a>
-            </div>
+        <div class="hero_text_container">
+          <div class="hero_text mobile fade_bottom">
+            <h1 data-text="Figma">Figma</h1>
+            <h1 data-text="Photoshop">Photoshop</h1>
+            <h1 data-text="Illustrator">Illustrator</h1>
+            <h1 data-text="Frontend">Frontend</h1>
+            <h1 data-text="UI | Ux">UI | Ux</h1>
+            <h1 data-text="Javascript">Javascript</h1>
+            <h1 data-text="Angular">Angular</h1>
+            <h1 data-text="React">React</h1>
+            <h1 data-text="Typescript">Typescript</h1>
+            <h1 data-text="Html Css">Html Css</h1>
+            <h1 data-text="Adobe Xd">Adobe Xd</h1>
           </div>
 
-        </article>
-
-        <!-- Portfolio Item 2 -->
-        <article class="portfolio-item" data-category="design">
-          <div class="portfolio-card">
-
-            <div class="portfolio-thumbnail-wrapper">
-            <img src="assets/green_spirit.png" alt="Project 2" class="portfolio-thumbnail">
-            </div>
-
-            <div class="text">
-                         <h2>Figma React</h2>
-            <h3>Lyngdorf</h3>
- 
-            <p class="portfolio-excerpt">Brief description of the project...</p>
-            <button class="expand-btn">View More <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
+          <div class="hero_text back_left fade_left">
+            <h1>React</h1>
+            <h1>Frontend</h1>
+            <h1>Illustrator</h1>
+            <h1>Html Css</h1>
+            <h1>Js Ts</h1>
           </div>
 
-          <div class="portfolio-expanded">
-            <button class="close-btn"><i class="fas fa-times"></i></button>
-            <div class="expanded-content">
-              <h2>Project Title 2</h2>
-              <img src="assets/green_spirit.png" alt="Project 2 Full">
-              <p>Full detailed description...</p>
-            </div>
+          <div class="hero_text back_right fade_right">
+            <h1>Figma</h1>
+            <h1>Photoshop</h1>
+            <h1>Javascript</h1>
+            <h1>Angular</h1>
+            <h1>Ux Ui</h1>
           </div>
-        </article>
+        </div>
+      </section>
 
-            <!-- Portfolio Item 2 -->
-        <article class="portfolio-item" data-category="design">
-          <div class="portfolio-card">
+      <!-- PORTFOLIO -->
+      <section id="main_portfolio">
+        <div class="portfolio-nav-sentinel"></div>
 
-            <div class="portfolio-thumbnail-wrapper">
-            <img src="assets/green_spirit.png" alt="Project 2" class="portfolio-thumbnail">
-            </div>
-
-            <div class="text">
-                    <h2>Figma React</h2>
-            <h3>Magic 8 Ball</h3>
-      
-            <p class="portfolio-excerpt">Brief description of the project...</p>
-            <button class="expand-btn">View More <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
+        <div class="portfolio_nav">
+          <div class="portfolio_nav_container">
+            <h1><i class="fa-solid fa-face-grin-wide"></i></h1>
+            <h1>Portfolio</h1>
+            <h1><i class="fa-solid fa-face-grin-wide"></i></h1>
           </div>
+        </div>
 
-          <div class="portfolio-expanded">
-            <button class="close-btn"><i class="fas fa-times"></i></button>
-            <div class="expanded-content">
-              <h2>Project Title 2</h2>
-              <img src="assets/green_spirit.png" alt="Project 2 Full">
-              <p>Full detailed description...</p>
+        <div class="portfolio-grid">
+          <!-- ITEM 1 -->
+          <article class="portfolio-item lazy" data-category="web">
+            <div class="portfolio-card">
+              <div class="portfolio-thumbnail-wrapper onsocial-wrapper">
+                <img
+                  src="assets/air_onsocial.png"
+                  alt="Onsocial project"
+                  class="portfolio-thumbnail"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+
+              <div class="text">
+                <h2>UX | UI | FIGMA | REACT</h2>
+                <h3>Onsocial</h3>
+                <p class="portfolio-excerpt">
+                  Java React Social app worked in a team of 4 using GIT & Google
+                  meets.
+                </p>
+                <a href="portfolio_item.html" class="expand-btn">
+                  View More <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
             </div>
+          </article>
+
+          <!-- ITEM 2 -->
+          <article class="portfolio-item lazy" data-category="design">
+            <div class="portfolio-card">
+              <div class="portfolio-thumbnail-wrapper oaoedl-wrapper">
+                <img
+                  src="assets/book_cover.png"
+                  alt="OAOEDL project"
+                  class="portfolio-thumbnail"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+
+              <div class="text">
+                <h2>Figma React</h2>
+                <h3>OAOEDL</h3>
+                <p class="portfolio-excerpt">
+                  Brief description of the project...
+                </p>
+                <a href="portfolio_tonaphoto.html" class="expand-btn">
+                  View More <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ITEM 3 -->
+          <article class="portfolio-item lazy" data-category="design">
+            <div class="portfolio-card">
+              <div class="portfolio-thumbnail-wrapper tona-wrapper">
+                <img
+                  src="assets/tonaphoto.png"
+                  alt="TonaPhoto project"
+                  class="portfolio-thumbnail"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+
+              <div class="text">
+                <h2>Figma React</h2>
+                <h3>TonaPhoto</h3>
+                <p class="portfolio-excerpt">
+                  Brief description of the project...
+                </p>
+                <a href="portfolio_tonaphoto.html" class="expand-btn">
+                  View More <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ITEM 4 -->
+          <article class="portfolio-item lazy" data-category="design">
+            <div class="portfolio-card">
+              <div class="portfolio-thumbnail-wrapper records-wrapper">
+                <img
+                  src="assets/oldenburg_records.png"
+                  alt="Oldenburg Records project"
+                  class="portfolio-thumbnail"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+
+              <div class="text">
+                <h2>Figma React</h2>
+                <h3>Oldenburg Illustrations</h3>
+                <p class="portfolio-excerpt">
+                  Brief description of the project...
+                </p>
+                <button class="expand-btn">View More</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ITEM 5 -->
+          <article class="portfolio-item lazy" data-category="design">
+            <div class="portfolio-card">
+              <div class="portfolio-thumbnail-wrapper tinderlei-wrapper">
+                <img
+                  src="assets/Tinderlei.png"
+                  alt="Tinderlei project"
+                  class="portfolio-thumbnail"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+
+              <div class="text">
+                <h2>Wordpress</h2>
+                <h3>Tinderlei</h3>
+                <p class="portfolio-excerpt">
+                  Brief description of the project...
+                </p>
+                <button class="expand-btn">
+                  View More <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- ITEM 6 -->
+          <article class="portfolio-item lazy" data-category="design">
+            <div class="portfolio-card">
+              <div class="portfolio-thumbnail-wrapper green-wrapper">
+                <img
+                  src="assets/card.png"
+                  alt="Green Spirit project"
+                  class="portfolio-thumbnail"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+
+              <div class="text">
+                <h2>Figma React</h2>
+                <h3>Green Spirit</h3>
+                <p class="portfolio-excerpt">
+                  Brief description of the project...
+                </p>
+                <button class="expand-btn">View More</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <footer>
+          <div class="footer_wrapper">
+          <div class="footer_col">
+                <h1><a href="tel:+14155552671" class="call-btn"><i class="fa-solid fa-phone"></i></a>
+</h1>
           </div>
-        </article>
-
-            <!-- Portfolio Item 2 -->
-        <article class="portfolio-item" data-category="design">
-          <div class="portfolio-card">
-
-            <div class="portfolio-thumbnail-wrapper">
-            <img src="assets/green_spirit.png" alt="Project 2" class="portfolio-thumbnail">
-            </div>
-
-            <div class="text">
-            <h3>Tona Photo</h3>
-            <h2>Figma React</h2>
-            <p class="portfolio-excerpt">Brief description of the project...</p>
-            <button class="expand-btn">View More</button>
-            </div>
-          </div>
-
-          <div class="portfolio-expanded">
-            <button class="close-btn"><i class="fas fa-times"></i></button>
-            <div class="expanded-content">
-              <h2>Project Title 2</h2>
-              <img src="assets/green_spirit.png" alt="Project 2 Full">
-              <p>Full detailed description...</p>
-            </div>
-          </div>
-        </article>
-
-            <!-- Portfolio Item 2 -->
-        <article class="portfolio-item" data-category="design">
-          <div class="portfolio-card">
-
-            <div class="portfolio-thumbnail-wrapper">
-            <img src="assets/green_spirit.png" alt="Project 2" class="portfolio-thumbnail">
-            </div>
-
-            <div class="text">
-            <h3>Green Spirit</h3>
-            <h2>Figma React</h2>
-            <p class="portfolio-excerpt">Brief description of the project...</p>
-            <button class="expand-btn">View More</button>
-            </div>
-          </div>
-
-          <div class="portfolio-expanded">
-            <button class="close-btn"><i class="fas fa-times"></i></button>
-            <div class="expanded-content">
-              <h2>Project Title 2</h2>
-              <img src="assets/green_spirit.png" alt="Project 2 Full">
-              <p>Full detailed description...</p>
-            </div>
-          </div>
-        </article>
-
-  
-
+        <div class="footer_col center">
+          <h1>Linéa</h1>
+          <h1>Oldenburg</h1>
+          <p>UX / UI DESIGNER • WEBBUTVECKLARE</p>
+        </div>
+      <div class="footer_col">
+         <h1><a href="mailto:someone@example.com"><a href="mailto:someone@example.com"><i class="fa-solid fa-paper-plane"></i></a>
+</h1>
       </div>
-    </section>
+    </div>
+  <p>This portfolio was built with html, scss & vanilla JavaScript, All rights reserved. 2026</p>
+  </footer>
+      </section>
 
-    <section id="main_contact">
-      <h1>This is contact-page</h1>
-    </section>
-  </main>
-  <script src="./script/script.js"></script>
-</body>
+      <!-- CONTACT -->
+      <section id="main_contact">
+        <div class="contact-wrapper">
+          <div class="contact_col">
+            <h1>Get in touch <br>  <i class="fa-solid fa-face-smile"></i> <i class="fa-regular fa-face-smile"></i>  </h1>
+            <p class="mail-p">kontakt.lineaoldenburg@gmail.com</p>
 
+            <div class="two_lines">
+              <div class="col">
+              <b>BASE</b>
+              <p>Enköping | Sweden</p>
+              </div>
+
+              <div class="col">
+              <b>PHONE</b>
+              <p>+46 729498784</p>
+              </div>
+              </div>
+          </div>
+           <div class="contact_col form">
+          <form id="contact-form">
+            <h1>Send something:</h1>
+            <label>Name</label> 
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Your Name"
+              required
+            />
+            <label>Mail</label> 
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Your Email"
+              required
+            />
+
+            <label class="message">Message</label> 
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              required
+            ></textarea>
+
+            <button
+              type="submit"
+              class="g-recaptcha"
+              data-sitekey="6Ldi9GMsAAAAADXp4ZYKAWfI6qRkcUoqbzpaYJl1"
+              data-callback="onSubmit"
+              data-size="invisible"
+            >
+              Send <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+
+          <div class="contact_me">
+          <img  src="assets/me_bg.png" alt="">
+          <img class="tape" src="assets/tape.png" alt="">
+          </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+      defer
+    ></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="script/script.js" defer></script>
+  </body>
 </html>

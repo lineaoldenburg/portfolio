@@ -1,11 +1,48 @@
 @import "./_variables";
+/* ==========================
+   SLOWER PORTFOLIO SCROLLING
+========================== */
+
+/* Add this to your main.css file */
+
+/* Method 1: CSS-only smooth scrolling (simple, works everywhere) */
+main {
+  scroll-behavior: smooth;
+}
+
+/* Method 2: Reduce scroll sensitivity using CSS (experimental, limited browser support) */
+#main_portfolio {
+  overscroll-behavior: contain;
+  scroll-snap-type: y proximity;
+}
+
+/* Method 3: Add subtle scroll snap points to slow perception (optional) */
+.portfolio-item {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+/* ==========================
+   RECOMMENDED SOLUTION
+========================== */
+
+/* Just add smooth scrolling - this makes all scrolling feel slower and more controlled */
+* {
+  scroll-behavior: smooth;
+}
+
+main {
+  scroll-behavior: smooth;
+  /* Add momentum scrolling for iOS */
+  -webkit-overflow-scrolling: touch;
+}
 
 // SINGLE PAGE //
 //nav
-  .portfolio_nav_single {
+.portfolio_nav_single {
   position: sticky;
-  top: 65px;
-  background: transparent;
+  top: $navbar-height;
+  background: $almost-white;
   padding: $space-md 0 0 0;
   z-index: 1;
 
@@ -23,12 +60,19 @@
   }
 
   .portfolio_nav_container {
-    background-color: #FFCC00;
+    background-color: #ffcc00;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 82px;
+    height: 62px;
     padding: $space-lg;
+
+    &.tona {
+      h1 {
+        color: #ebff55;
+      }
+      background-color: black;
+    }
   }
 }
 
@@ -41,8 +85,8 @@
   left: 50%;
   transform: translateX(-50%);
   background-color: transparent;
-  margin-top: $navbar-height;
-  padding-bottom: 202px;
+  padding-top: $navbar-height;
+  padding-bottom: 802px;
 }
 
 /* Portfolio Item */
@@ -64,9 +108,9 @@
   justify-content: space-between;
   padding: $space-xl 0;
 
-   .process_arrow {
-      opacity: 0.2;
-    }
+  .process_arrow {
+    opacity: 0.2;
+  }
 
   .process_item {
     display: flex;
@@ -74,12 +118,11 @@
     align-items: center;
     justify-content: center;
     gap: $space-md;
-          opacity: 0.6;
- 
+    opacity: 0.6;
+    color: $almost-black;
 
     h1 {
       font-size: 42px;
-
     }
 
     p {
@@ -87,7 +130,6 @@
       text-transform: uppercase;
       font-size: 12px;
     }
-
   }
 }
 
@@ -105,31 +147,30 @@
     gap: $space-lg;
 
     &.img {
-    .img_box {
-      width: 50%;
-      padding: $space-md;
-      background-color: #EBEBEB;
+      .img_box {
+        width: 50%;
+        padding: $space-md;
+        background-color: transparent;
 
-      img {
-      width: 100%;
-      border-radius: 12px;
+        img {
+          width: 100%;
+          border-radius: 12px;
+        }
+      }
     }
-    }
-  }
 
     &.full {
-    .img_box {
-      width: 100%;
-      padding: $space-md;
-      background-color: #EBEBEB;
+      .img_box {
+        width: 100%;
+        padding: $space-md;
+        background-color: transparent;
 
-      img {
-      width: 100%;
-      border-radius: 12px;
+        img {
+          width: 100%;
+          border-radius: 12px;
+        }
+      }
     }
-    }
-  }
-    
   }
 }
 
@@ -181,7 +222,6 @@
     font-size: 14px;
     font-weight: 300;
     text-transform: uppercase;
-
   }
 
   .portfolio-excerpt {
@@ -192,27 +232,6 @@
     padding: $space-md 0;
     font-size: 14px;
     margin: 0;
-  }
-
-  a .expand-btn {
-    background: $almost-black;
-    color: $almost-pink;
-    font-family: $title-font;
-    width: 222px;
-    padding: $space-sm $space-md;
-    text-transform: uppercase;
-    border: none;
-    max-width: 182px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: #555;
-      transform: translateY(-2px);
-    }
   }
 
   //overview box
@@ -251,10 +270,11 @@
       opacity: 0.7;
     }
     p.info {
-      font-size: 8px;
+      font-size: 11px;
       font-style: italic;
       opacity: 0.6;
       margin: $space-lg 0;
+      width: 60%;
     }
 
     .left_col {
@@ -269,7 +289,7 @@
     .right_col {
       width: 70%;
 
-       p {
+      p {
         padding-top: $space-md;
       }
     }
@@ -320,7 +340,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 82px;
+    height: 62px;
     padding: $space-lg;
   }
 }
@@ -441,7 +461,6 @@
     font-size: 14px;
     font-weight: 300;
     text-transform: uppercase;
-
   }
 
   .portfolio-excerpt {
@@ -452,27 +471,6 @@
     padding: $space-md 0;
     font-size: 14px;
     margin: 0;
-  }
-
-  .expand-btn {
-    background: $almost-black;
-    color: $almost-pink;
-    font-family: $title-font;
-    width: auto;
-    padding: $space-sm $space-md;
-    text-transform: uppercase;
-    border: none;
-    max-width: 182px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: #555;
-      transform: translateY(-2px);
-    }
   }
 }
 

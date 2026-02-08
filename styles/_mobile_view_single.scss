@@ -1,0 +1,148 @@
+@import "./_variables";
+
+@media (max-width: 968px) {
+
+  /* -------------------------
+     NAV
+  ------------------------- */
+  .portfolio_nav_single {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .portfolio_nav_container {
+      width: calc(100vw - 2 * ($space-sm + $space-md));
+
+      h1 {
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+  }
+
+  /* -------------------------
+     MAIN CONTAINERS
+  ------------------------- */
+  #main_portfolio_single,
+  .portfolio-item_single,
+  .overview_about,
+  .snapshots {
+    width: calc(100vw - 2 * ($space-sm + $space-md));
+  }
+
+  .portfolio-item_single.hidden {
+    display: none;
+  }
+
+  .overview_about {
+    flex-direction: column;
+
+    .p.info,
+    .left_col,
+    .right_col {
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+
+  /* -------------------------
+     SNAPSHOTS
+  ------------------------- */
+  .snapshots {
+    overflow: hidden;
+    padding: $space-xl 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+
+    .snapshot_item {
+      width: 100%;
+      display: flex;
+      gap: $space-lg;
+
+      &.img,
+      &.full {
+        .img_box {
+          width: 100%;
+          padding: 0;
+          background-color: transparent;
+
+          img {
+            width: 100%;
+            border-radius: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  /* -------------------------
+     PROCESS BAR (FIXED)
+  ------------------------- */
+  .process_bar {
+    width: 100%;
+    display: grid; // overrides desktop flex
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-lg;
+    justify-items: center;
+    padding: $space-2xl 0;
+
+    p {
+        text-align: center;
+    }
+  }
+
+  .process_arrow {
+    display: none;
+  }
+}
+
+@media (min-width: 968px) and (max-width: 1200px) {
+
+  /* -------------------------
+     NAV
+  ------------------------- */
+  .portfolio_nav_single {
+    .portfolio_nav_container {
+      width: calc(100vw - 2 * ($space-sm + $space-xl));
+    }
+  }
+
+  /* -------------------------
+     MAIN CONTAINERS
+  ------------------------- */
+  #main_portfolio_single,
+  .portfolio-item_single,
+  .overview_about,
+  .snapshots {
+    width: calc(100vw - 2 * ($space-sm + $space-xl));
+  }
+
+  .snapshots {
+    overflow: hidden;
+    padding: $space-xl 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+
+    .snapshot_item {
+      width: 100%;
+      display: flex;
+      gap: $space-lg;
+
+      &.img,
+      &.full {
+        .img_box {
+          width: 100%;
+          padding: 0;
+          background-color: transparent;
+
+          img {
+            width: 100%;
+            border-radius: 12px;
+          }
+        }
+      }
+    }
+  }
+}
