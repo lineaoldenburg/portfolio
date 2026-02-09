@@ -11,7 +11,7 @@
 }
 
 /* Mobile breakpoint */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   /* ==========================
      NAVIGATION
   ========================== */
@@ -242,29 +242,8 @@
     min-height: auto;
   }
 
-  .portfolio-card .text {
-    width: 100%;
-    padding: 24px;
-    min-height: auto;
-  }
-
-  .portfolio-card .portfolio-thumbnail-wrapper {
-    width: 100%;
-    height: 188px;
-    background-size: contain;
-  }
-
-  .portfolio-card .portfolio-thumbnail {
-    min-height: 188px;
-    object-fit: contain;
-    display: none;
-  }
-
   /* Hero text adjustments */
 
-  .top_text {
-    font-size: 28px;
-  }
 
   /* Main portfolio section */
   #main_portfolio {
@@ -295,56 +274,66 @@
   }
 
   .hero_text {
-       &.mobile {
-        h1 {
-          font-size: 20vw;
-           opacity: 0.4;
-        }
-       }
+ 
 
-        /* Vary animation speeds for visual interest */
-      h1:nth-child(1) {
-        animation-duration: 102s;
-      }
-      h1:nth-child(2) {
-        animation-duration: 105s;
-      }
-      h1:nth-child(3) {
-        animation-duration: 103s;
-      }
-      h1:nth-child(4) {
-        animation-duration: 104s;
-      }
-      h1:nth-child(5) {
-        animation-duration: 106s;
-      }
-      h1:nth-child(6) {
-        animation-duration: 101s;
-      }
-      h1:nth-child(7) {
-        animation-duration: 102s;
-      }
-      h1:nth-child(8) {
-        animation-duration: 105s;
-      }
-      h1:nth-child(9) {
-        animation-duration: 104s;
-      }
-      h1:nth-child(10) {
-        animation-duration: 102s;
-      }
-      h1:nth-child(11) {
-        animation-duration: 106s;
-      }
+    /* Vary animation speeds for visual interest */
+    h1:nth-child(1) {
+      animation-duration: 102s;
+    }
+    h1:nth-child(2) {
+      animation-duration: 105s;
+    }
+    h1:nth-child(3) {
+      animation-duration: 103s;
+    }
+    h1:nth-child(4) {
+      animation-duration: 104s;
+    }
+    h1:nth-child(5) {
+      animation-duration: 106s;
+    }
+    h1:nth-child(6) {
+      animation-duration: 101s;
+    }
+    h1:nth-child(7) {
+      animation-duration: 102s;
+    }
+    h1:nth-child(8) {
+      animation-duration: 105s;
+    }
+    h1:nth-child(9) {
+      animation-duration: 104s;
+    }
+    h1:nth-child(10) {
+      animation-duration: 102s;
+    }
+    h1:nth-child(11) {
+      animation-duration: 106s;
+    }
   }
-  
 
   .top_text {
-    font-size: 3vw;
-    padding: 0;
-    margin: 0;
-    width: 80%;
+    font-size: 3.5em;
+    width: 100%;
     top: 85%;
+  }
+
+  .portfolio-card .portfolio-thumbnail-wrapper {
+    width: 100%;
+    height: 488px;
+    background-size: contain;
+  }
+
+  .portfolio-card .portfolio-thumbnail {
+    min-height: 488px;
+    object-fit: contain;
+    display: none;
+  }
+
+  .portfolio-card .text {
+    width: 100%;
+    padding: $space-3xl;
+    min-height: auto;
   }
 
   .portfolio-thumbnail-wrapper.onsocial-wrapper {
@@ -388,6 +377,8 @@
     background-size: 80%;
     background-position: center;
   }
+
+
 }
 
 /* Extra small devices */
@@ -404,14 +395,7 @@
     font-size: 9px;
   }
 
-  .hero_text {
-    font-size: 10vw;
-  }
-
   .top_text {
-    font-size: 4vw;
-    padding: 0;
-    margin: 0;
     width: 80%;
     top: 85%;
     text-transform: none;
@@ -423,5 +407,59 @@
 
   .portfolio_nav h1 {
     font-size: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  article {
+    max-width: 80%;
+    margin-left: 10%;
+  }
+
+    footer {
+    max-width: 80%;
+    margin-left: 10%;
+  }
+
+   .hero_text {
+       &.mobile {
+      h1 {
+        font-size: 15vw;
+        opacity: 0.4;
+      }
+    }
+  }
+
+  .portfolio_nav_single,
+  .portfolio_nav {
+    max-width: 80%;
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-card .portfolio-thumbnail-wrapper {
+    width: 100%;
+    height: 188px;
+    background-size: cover;
+  }
+
+   .hero_text {
+       &.mobile {
+      h1 {
+        font-size: 20vw;
+        opacity: 0.4;
+      }
+    }
+  }
+
+  .portfolio-card .portfolio-thumbnail {
+    display: none;
+  }
+
+  .portfolio-card .text {
+    width: 100%;
+    padding: 24px;
+    min-height: auto;
   }
 }

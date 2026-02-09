@@ -5,27 +5,39 @@
   src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS - prevents invisible text */
 }
 /* Inter Light */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
-  font-weight: 300; /* light */
+  font-weight: 300;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Regular */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
-  font-weight: 400; /* normal */
+  font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Bold */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
-  font-weight: 700; /* bold */
+  font-weight: 700;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Scroll";
+  src: url("../assets/fonts/Shrikhand-Regular.woff2") format("woff2"), url("../assets/fonts/Shrikhand-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 *,
 *::before,
@@ -34,6 +46,12 @@
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide reCAPTCHA badge */
+.grecaptcha-badge {
+  visibility: hidden !important;
+  opacity: 0 !important;
 }
 
 /* Prevent visual scroll jump during scroll restoration */
@@ -96,27 +114,39 @@ h1 {
   src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS - prevents invisible text */
 }
 /* Inter Light */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
-  font-weight: 300; /* light */
+  font-weight: 300;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Regular */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
-  font-weight: 400; /* normal */
+  font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Bold */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
-  font-weight: 700; /* bold */
+  font-weight: 700;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Scroll";
+  src: url("../assets/fonts/Shrikhand-Regular.woff2") format("woff2"), url("../assets/fonts/Shrikhand-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 #contactBtn {
   background-color: #141414;
@@ -143,8 +173,8 @@ h1 {
   color: #f3f3f3;
 }
 #contactBtn.open {
-  background-color: #D5B2CD;
-  color: #141414;
+  background-color: #141414;
+  color: #f3f3f3;
 }
 
 .navBtn,
@@ -192,7 +222,6 @@ h1 {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  transition: all 0.3s ease;
   text-decoration: none !important;
 }
 .expand-btn:hover {
@@ -210,27 +239,39 @@ h1 {
   src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS - prevents invisible text */
 }
 /* Inter Light */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
-  font-weight: 300; /* light */
+  font-weight: 300;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Regular */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
-  font-weight: 400; /* normal */
+  font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Bold */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
-  font-weight: 700; /* bold */
+  font-weight: 700;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Scroll";
+  src: url("../assets/fonts/Shrikhand-Regular.woff2") format("woff2"), url("../assets/fonts/Shrikhand-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Dela Gothic One */
 @font-face {
@@ -238,27 +279,39 @@ h1 {
   src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS - prevents invisible text */
 }
 /* Inter Light */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
-  font-weight: 300; /* light */
+  font-weight: 300;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Regular */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
-  font-weight: 400; /* normal */
+  font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Bold */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
-  font-weight: 700; /* bold */
+  font-weight: 700;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Scroll";
+  src: url("../assets/fonts/Shrikhand-Regular.woff2") format("woff2"), url("../assets/fonts/Shrikhand-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 #main_contact {
   position: fixed;
@@ -358,6 +411,12 @@ h1 {
   outline: none;
   border: 0.5px solid #141414;
 }
+#main_contact .contact-wrapper .contact_col.form #contact-form span {
+  padding: 0 0 16px 0;
+}
+#main_contact .contact-wrapper .contact_col.form #contact-form span a {
+  color: black;
+}
 #main_contact .contact-wrapper .contact_col.form #contact-form textarea {
   max-width: 100%;
   min-height: 222px;
@@ -385,32 +444,11 @@ h1 {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  transition: all 0.3s ease;
   text-decoration: none !important;
 }
 #main_contact .contact-wrapper .contact_col.form #contact-form button:hover {
   background-color: #D5B2CD;
   color: #141414;
-}
-#main_contact .contact-wrapper .contact_col.form .contact_me {
-  position: relative;
-  width: 120px;
-  bottom: 0;
-  right: 0;
-  float: right;
-  left: 100%;
-  transform: translateX(-100%);
-  margin-bottom: -32px;
-  margin-right: -12px;
-}
-#main_contact .contact-wrapper .contact_col.form .contact_me img {
-  width: 100%;
-}
-#main_contact .contact-wrapper .contact_col.form .contact_me img.tape {
-  position: absolute;
-  top: -6px;
-  right: -5px;
-  width: 120%;
 }
 #main_contact .contact-wrapper .contact_col.form {
   width: 40%;
@@ -420,7 +458,12 @@ h1 {
   pointer-events: auto;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+  .contact-wrapper {
+    padding: 84px 24px 24px 24px;
+  }
+}
+@media (max-width: 1400px) {
   #main_contact {
     padding: 4px 4px 0 4px;
   }
@@ -474,10 +517,7 @@ h1 {
   }
   #main_contact .contact-wrapper .contact_col.form #contact-form button {
     font-size: 18px;
-    margin-top: 16px;
-  }
-  #main_contact .contact-wrapper .contact_col.form .contact_me {
-    display: none;
+    margin-top: 24px;
   }
 }
 @media (max-width: 480px) {
@@ -488,6 +528,7 @@ h1 {
     padding: 96px 24px 24px 24px;
   }
   #main_contact .contact-wrapper .contact_col {
+    flex-direction: column-reverse;
     width: 100%;
   }
   #main_contact .contact-wrapper .contact_col h1 {
@@ -506,27 +547,39 @@ h1 {
   src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS - prevents invisible text */
 }
 /* Inter Light */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
-  font-weight: 300; /* light */
+  font-weight: 300;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Regular */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
-  font-weight: 400; /* normal */
+  font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Bold */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
-  font-weight: 700; /* bold */
+  font-weight: 700;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Scroll";
+  src: url("../assets/fonts/Shrikhand-Regular.woff2") format("woff2"), url("../assets/fonts/Shrikhand-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* ==========================
    SLOWER PORTFOLIO SCROLLING
@@ -606,7 +659,7 @@ main {
   transform: translateX(-50%);
   background-color: transparent;
   padding-top: 82px;
-  padding-bottom: 802px;
+  padding-bottom: 202px;
 }
 
 /* Portfolio Item */
@@ -862,7 +915,7 @@ main {
   gap: 24px;
   padding-top: 24px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
@@ -872,25 +925,6 @@ main {
 .portfolio-item {
   position: relative;
   transition: all 0.4s ease;
-  /* Hidden state for filtering */
-}
-.portfolio-item.hidden {
-  display: none;
-}
-.portfolio-item {
-  /* Expanded state */
-}
-.portfolio-item.expanded {
-  grid-column: 1/-1;
-  z-index: 10;
-}
-.portfolio-item.expanded .portfolio-card {
-  opacity: 0;
-  pointer-events: none;
-}
-.portfolio-item.expanded .portfolio-expanded {
-  opacity: 1;
-  pointer-events: auto;
 }
 
 /* Portfolio Card (Collapsed State) */
@@ -924,18 +958,21 @@ main {
   min-height: 480px;
 }
 .portfolio-card h3 {
-  font-size: 32px;
+  font-size: 24px;
   color: rgb(0, 0, 0);
   font-family: "Dela Gothic One", sans-serif;
   font-weight: 300;
+  line-height: 1.2;
   margin: 0;
+  padding-top: 3px;
+  text-transform: uppercase;
 }
 .portfolio-card h2 {
   margin: 0;
   padding: 0;
   color: rgba(0, 0, 0, 0.6);
   font-family: "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   text-transform: uppercase;
 }
@@ -945,8 +982,9 @@ main {
   font-family: "Inter", sans-serif;
   font-weight: 300;
   padding: 16px 0;
-  font-size: 14px;
+  font-size: 16px;
   margin: 0;
+  line-height: 1.3;
 }
 
 /* Portfolio Expanded (Full Width State) */
@@ -1025,27 +1063,39 @@ main {
   src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS - prevents invisible text */
 }
 /* Inter Light */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
-  font-weight: 300; /* light */
+  font-weight: 300;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Regular */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
-  font-weight: 400; /* normal */
+  font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Bold */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
-  font-weight: 700; /* bold */
+  font-weight: 700;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Scroll";
+  src: url("../assets/fonts/Shrikhand-Regular.woff2") format("woff2"), url("../assets/fonts/Shrikhand-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* =========================
    MAIN HERO CONTAINER
@@ -1238,7 +1288,7 @@ main {
   }
 }
 /* =========================
-   TOP TEXT
+   TOP TEXT WITH GLITTER
    ========================= */
 .top_text {
   position: fixed;
@@ -1246,19 +1296,49 @@ main {
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
-  font-size: clamp(0.5rem, 0.5vw, 1rem);
-  color: #D5B2CD;
+  width: 80%;
+  max-width: 60vw;
   text-align: center;
   line-height: 1;
-  text-shadow: 5px 2px 0px rgb(152, 9, 95);
 }
-.top_text h1 {
-  font-family: "Dela Gothic One", sans-serif;
-  margin: 0;
-  font-weight: 100;
-  padding: 0;
+.top_text .glitter-text {
+  width: 100%;
+  height: auto;
+}
+.top_text .glitter-base {
+  font-family: "Scroll", sans-serif;
+  font-size: 2em;
+  font-weight: 800;
+  fill: #D5B2CD;
+  text-shadow: 10px 5px 0px #141414;
+}
+.top_text .noise {
+  animation: glitter-sparkle 0.25s linear infinite;
+}
+.top_text .overlay {
+  mix-blend-mode: multiply;
+  fill: rgb(232, 211, 230);
+}
+.top_text .star {
+  animation: flicker 2s ease alternate infinite;
 }
 
+@keyframes glitter-sparkle {
+  0% {
+    filter: url("#noiseFilter1");
+  }
+  100% {
+    filter: url("#noiseFilter2");
+  }
+}
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 /* =========================
    PROFILE IMAGE
    ========================= */
@@ -1279,7 +1359,7 @@ main {
    RESPONSIVE BREAKPOINTS
    ========================= */
 /* Laptop & small desktop */
-@media (min-width: 768px) and (max-width: 2056px) {
+@media (min-width: 1200px) and (max-width: 2056px) {
   .hero_text {
     font-size: 3rem;
     line-height: 0.9;
@@ -1295,27 +1375,39 @@ main {
   src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS - prevents invisible text */
 }
 /* Inter Light */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
-  font-weight: 300; /* light */
+  font-weight: 300;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Regular */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
-  font-weight: 400; /* normal */
+  font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Bold */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
-  font-weight: 700; /* bold */
+  font-weight: 700;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Scroll";
+  src: url("../assets/fonts/Shrikhand-Regular.woff2") format("woff2"), url("../assets/fonts/Shrikhand-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 nav {
   display: flex;
@@ -1329,7 +1421,9 @@ nav {
   left: 8px;
   top: 8px;
   z-index: 999;
-  transition: background-color 0.1s ease;
+  background-color: transparent; /* START transparent */
+  transition: background-color 0.1s ease; /* Fast transition for responsive scrolling */
+  /* Add background IMMEDIATELY when scrolled */
 }
 nav.scrolled {
   background-color: #f3f3f3;
@@ -1408,7 +1502,20 @@ nav .social_dropdown ul li a i {
   font-size: 18px;
 }
 
-/* Starting states (visible) */
+/* Starting states for page load */
+.fade_bottom {
+  translate: 0 80px; /* Start lower, will fade UP */
+  opacity: 0;
+  transition: translate 0.6s ease, opacity 0.6s ease;
+}
+
+.fade_blur {
+  filter: blur(90px); /* Start VERY blurred (same as scroll-away state) */
+  opacity: 0;
+  transition: filter 0.7s ease, opacity 0.7s ease;
+}
+
+/* Other fades start visible */
 .fade_left {
   transform: translateX(0);
   opacity: 1;
@@ -1426,24 +1533,23 @@ nav .social_dropdown ul li a i {
   transition: opacity 0.6s ease;
 }
 
-.fade_bottom {
-  translate: 0 0;
-  opacity: 1;
-  transition: translate 0.6s ease, opacity 0.6s ease;
-}
-
 .fade_top {
   translate: 0 0;
   opacity: 1;
   transition: translate 0.6s ease, opacity 0.6s ease;
 }
 
-.fade_blur {
-  filter: blur(0px);
+/* Fade IN on page load - triggered by body.loaded class */
+body.loaded .fade_bottom {
+  translate: 0 0; /* Slide up into position */
   opacity: 1;
-  transition: filter 0.7s ease, opacity 0.7s ease;
+}
+body.loaded .fade_blur {
+  filter: blur(12px); /* Fade to natural blur state */
+  opacity: 1;
 }
 
+/* Fade OUT when scrolled down */
 body.scrolled-hero .fade_left {
   transform: translateX(-120px);
   opacity: 0;
@@ -1488,27 +1594,39 @@ body.contact-open .profile_img_container {
   src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS - prevents invisible text */
 }
 /* Inter Light */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
-  font-weight: 300; /* light */
+  font-weight: 300;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Regular */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
-  font-weight: 400; /* normal */
+  font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Bold */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
-  font-weight: 700; /* bold */
+  font-weight: 700;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Scroll";
+  src: url("../assets/fonts/Shrikhand-Regular.woff2") format("woff2"), url("../assets/fonts/Shrikhand-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* ==========================
    MOBILE STYLES
@@ -1520,7 +1638,7 @@ body.contact-open .profile_img_container {
 }
 
 /* Mobile breakpoint */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   /* ==========================
      NAVIGATION
   ========================== */
@@ -1719,25 +1837,7 @@ body.contact-open .profile_img_container {
     flex-direction: column;
     min-height: auto;
   }
-  .portfolio-card .text {
-    width: 100%;
-    padding: 24px;
-    min-height: auto;
-  }
-  .portfolio-card .portfolio-thumbnail-wrapper {
-    width: 100%;
-    height: 188px;
-    background-size: contain;
-  }
-  .portfolio-card .portfolio-thumbnail {
-    min-height: 188px;
-    object-fit: contain;
-    display: none;
-  }
   /* Hero text adjustments */
-  .top_text {
-    font-size: 28px;
-  }
   /* Main portfolio section */
   #main_portfolio {
     padding: 0 16px;
@@ -1761,10 +1861,6 @@ body.contact-open .profile_img_container {
     height: 80vh;
     filter: blur(8px);
     margin-bottom: -82px;
-  }
-  .hero_text.mobile h1 {
-    font-size: 20vw;
-    opacity: 0.4;
   }
   .hero_text {
     /* Vary animation speeds for visual interest */
@@ -1803,11 +1899,24 @@ body.contact-open .profile_img_container {
     animation-duration: 106s;
   }
   .top_text {
-    font-size: 3vw;
-    padding: 0;
-    margin: 0;
-    width: 80%;
+    font-size: 3.5em;
+    width: 100%;
     top: 85%;
+  }
+  .portfolio-card .portfolio-thumbnail-wrapper {
+    width: 100%;
+    height: 488px;
+    background-size: contain;
+  }
+  .portfolio-card .portfolio-thumbnail {
+    min-height: 488px;
+    object-fit: contain;
+    display: none;
+  }
+  .portfolio-card .text {
+    width: 100%;
+    padding: 48px;
+    min-height: auto;
   }
   .portfolio-thumbnail-wrapper.onsocial-wrapper {
     background-image: url(../assets/air_onsocial.webp);
@@ -1856,13 +1965,7 @@ body.contact-open .profile_img_container {
   nav .nav_col.logo p {
     font-size: 9px;
   }
-  .hero_text {
-    font-size: 10vw;
-  }
   .top_text {
-    font-size: 4vw;
-    padding: 0;
-    margin: 0;
     width: 80%;
     top: 85%;
     text-transform: none;
@@ -1874,33 +1977,83 @@ body.contact-open .profile_img_container {
     font-size: 16px;
   }
 }
+@media (min-width: 768px) and (max-width: 1200px) {
+  article {
+    max-width: 80%;
+    margin-left: 10%;
+  }
+  footer {
+    max-width: 80%;
+    margin-left: 10%;
+  }
+  .hero_text.mobile h1 {
+    font-size: 15vw;
+    opacity: 0.4;
+  }
+  .portfolio_nav_single,
+  .portfolio_nav {
+    max-width: 80%;
+    margin-left: 10%;
+  }
+}
+@media (max-width: 768px) {
+  .portfolio-card .portfolio-thumbnail-wrapper {
+    width: 100%;
+    height: 188px;
+    background-size: cover;
+  }
+  .hero_text.mobile h1 {
+    font-size: 20vw;
+    opacity: 0.4;
+  }
+  .portfolio-card .portfolio-thumbnail {
+    display: none;
+  }
+  .portfolio-card .text {
+    width: 100%;
+    padding: 24px;
+    min-height: auto;
+  }
+}
 /* Dela Gothic One */
 @font-face {
   font-family: "Dela Gothic One";
   src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS - prevents invisible text */
 }
 /* Inter Light */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
-  font-weight: 300; /* light */
+  font-weight: 300;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Regular */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
-  font-weight: 400; /* normal */
+  font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Bold */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
-  font-weight: 700; /* bold */
+  font-weight: 700;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Scroll";
+  src: url("../assets/fonts/Shrikhand-Regular.woff2") format("woff2"), url("../assets/fonts/Shrikhand-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 @media (max-width: 968px) {
   /* -------------------------
@@ -2025,27 +2178,39 @@ body.contact-open .profile_img_container {
   src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS - prevents invisible text */
 }
 /* Inter Light */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
-  font-weight: 300; /* light */
+  font-weight: 300;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Regular */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
-  font-weight: 400; /* normal */
+  font-weight: 400;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 /* Inter Bold */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
-  font-weight: 700; /* bold */
+  font-weight: 700;
   font-style: normal;
+  font-display: swap; /* ADD THIS */
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Scroll";
+  src: url("../assets/fonts/Shrikhand-Regular.woff2") format("woff2"), url("../assets/fonts/Shrikhand-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* ADD THIS */
 }
 footer {
   background-color: #141414;
@@ -2102,6 +2267,13 @@ footer .footer_wrapper .footer_col.center h1 {
 }
 footer .footer_wrapper .footer_col.center p {
   font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  footer {
+    margin-top: 32px;
+    margin-bottom: 62px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

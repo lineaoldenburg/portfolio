@@ -91,7 +91,7 @@
 
           textarea,
           input {
-               border-radius: 7px;
+            border-radius: 7px;
             border: 0.5px solid $almost-black;
             margin-top: $space-sm;
             margin-bottom: $space-md;
@@ -105,6 +105,13 @@
               border: 0.5px solid $almost-black;
             }
           }
+  span {
+              padding: 0 0 $space-md 0;
+
+              a {
+                color: black;
+              }
+            }
 
           textarea {
             max-width: 100%;
@@ -136,7 +143,6 @@
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            transition: all 0.3s ease;
             text-decoration: none !important;
 
             &:hover {
@@ -146,28 +152,7 @@
           }
         }
 
-        .contact_me {
-          position: relative;
-          width: 120px;
-          bottom: 0;
-          right: 0;
-          float: right;
-          left: 100%;
-          transform: translateX(-100%);
-          margin-bottom: -32px;
-          margin-right: -12px;
-
-          img {
-            width: 100%;
-
-            &.tape {
-              position: absolute;
-              top: -6px;
-              right: -5px;
-              width: 120%;
-            }
-          }
-        }
+     
         width: 40%;
       }
     }
@@ -179,7 +164,14 @@
   }
 }
 
-@media (max-width: 768px) {
+
+@media (min-width: 768px) {
+  .contact-wrapper {
+    padding: calc(60px + $space-lg) $space-lg $space-lg $space-lg;
+  }
+}
+
+@media (max-width: 1400px) {
   #main_contact {
     padding: $space-xs $space-xs 0 $space-xs;
 
@@ -231,6 +223,7 @@
               margin-bottom: $space-sm;
             }
 
+
             label {
               padding-top: $space-sm;
               font-size: 11px;
@@ -242,13 +235,10 @@
 
             button {
               font-size: 18px;
-              margin-top: $space-md;
+              margin-top: $space-lg;
             }
           }
 
-          .contact_me {
-            display: none;
-          }
         }
       }
     }
@@ -263,7 +253,9 @@
       padding: calc(72px + $space-lg) $space-lg $space-lg $space-lg;
 
       .contact_col {
+        flex-direction: column-reverse;
         width: 100%;
+
         h1 {
           font-size: 28px;
         }
