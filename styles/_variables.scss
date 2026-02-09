@@ -1,4 +1,41 @@
 
+/* Dela Gothic One */
+@font-face {
+  font-family: 'Dela Gothic One';
+  src: url('../assets/fonts/DelaGothicOne-Regular.woff2') format('woff2'),
+       url('../assets/fonts/DelaGothicOne-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Inter Light */
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter_28pt-Light.woff2') format('woff2'),
+       url('../assets/fonts/Inter_28pt-Light.woff') format('woff');
+  font-weight: 300; /* light */
+  font-style: normal;
+}
+
+/* Inter Regular */
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter_28pt-Regular.woff2') format('woff2'),
+       url('../assets/fonts/Inter_28pt-Regular.woff') format('woff');
+  font-weight: 400; /* normal */
+  font-style: normal;
+}
+
+/* Inter Bold */
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter_28pt-Bold.woff2') format('woff2'),
+       url('../assets/fonts/Inter_28pt-Bold.woff') format('woff');
+  font-weight: 700; /* bold */
+  font-style: normal;
+}
+
+
 //FONTS
 $title-font: 'Dela Gothic One', sans-serif;
 $bread-font: "Inter", sans-serif;

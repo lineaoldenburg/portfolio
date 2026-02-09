@@ -167,6 +167,25 @@ document.addEventListener("DOMContentLoaded", function () {
      CONTACT OVERLAY
   ========================== */
   const contactOverlay = {
+    emailJsLoaded: false,
+    
+    async loadEmailJS() {
+      if (this.emailJsLoaded) return;
+      
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+        script.onload = () => {
+          emailjs.init("QPwvxbXR9QADme2kc");
+          this.emailJsLoaded = true;
+          console.log("EmailJS loaded successfully");
+          resolve();
+        };
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    },
+
     updateButton(isOpen) {
       if (!state.isHomePage) {
         this.updateButtonForNonHomePage();
@@ -174,8 +193,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       const buttonText = isOpen
-        ? 'Close <i class="fas fa-times"></i>'
-        : 'Contact <i class="fa-solid fa-face-smile"></i>';
+        ? 'Close <svg class="icon"><use href="#icon-times"></use></svg>'
+        : 'Contact <svg class="icon"><use href="#icon-face-smile"></use></svg>';
 
       if (elements.contactBtn) {
         elements.contactBtn.innerHTML = buttonText;
@@ -185,22 +204,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (elements.mobileContactBtn) {
         elements.mobileContactBtn.innerHTML = isOpen
-          ? '<i class="fa-solid fa-arrow-left"></i><span>Back Home</span>'
-          : '<i class="fa-solid fa-face-smile"></i><span>Contact</span>';
+          ? '<svg class="icon"><use href="#icon-arrow-left"></use></svg><span>Back Home</span>'
+          : '<svg class="icon"><use href="#icon-face-smile"></use></svg><span>Contact</span>';
       }
     },
 
     updateButtonForNonHomePage() {
       if (elements.contactBtn) {
-        elements.contactBtn.innerHTML = 'Home <i class="fa-solid fa-arrow-left"></i>';
+        elements.contactBtn.innerHTML = 'Home <svg class="icon"><use href="#icon-arrow-left"></use></svg>';
       }
       if (elements.mobileContactBtn) {
         elements.mobileContactBtn.innerHTML = 
-          '<i class="fa-solid fa-arrow-left"></i><span>Back Home</span>';
+          '<svg class="icon"><use href="#icon-arrow-left"></use></svg><span>Back Home</span>';
       }
     },
 
-    open() {
+    async open() {
       if (!state.isHomePage) {
         window.location.href = "/index.html";
         return;
@@ -210,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
       utils.toggleClass(elements.mainContact, "active", isOpen);
 
       if (isOpen) {
-        this.handleOpen();
+        await this.handleOpen();
       } else {
         this.handleClose();
       }
@@ -219,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
       hamburgerMenu.updateState(); // Update hamburger icon
     },
 
-    handleOpen() {
+    async handleOpen() {
       state.homeScrollY = elements.main.scrollTop;
       elements.heroBg?.classList.add("hidden");
       elements.heroBg?.classList.remove("slow-hidden");
@@ -233,6 +252,13 @@ document.addEventListener("DOMContentLoaded", function () {
       // else: keep nav scrolled state as is
       
       utils.closeMobileMenu();
+      
+      // Lazy load EmailJS when contact form is opened
+      try {
+        await this.loadEmailJS();
+      } catch (error) {
+        console.error("Failed to load EmailJS:", error);
+      }
     },
 
     handleClose() {
@@ -295,9 +321,9 @@ document.addEventListener("DOMContentLoaded", function () {
       
       // Toggle button content and icon
       if (isOpen) {
-        elements.navBtn.innerHTML = 'SOCIAL <i class="fa-solid fa-angle-up"></i>';
+        elements.navBtn.innerHTML = 'SOCIAL <svg class="icon"><use href="#icon-angle-up"></use></svg>';
       } else {
-        elements.navBtn.innerHTML = 'SOCIAL <i class="fa-solid fa-angle-down"></i>';
+        elements.navBtn.innerHTML = 'SOCIAL <svg class="icon"><use href="#icon-angle-down"></use></svg>';
       }
       
       console.log("Social dropdown toggled:", isOpen);
@@ -310,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
           !elements.navBtn.contains(e.target)) {
         elements.socialDropdown.classList.remove("social-active");
         elements.navBtn.classList.remove("open");
-        elements.navBtn.innerHTML = 'SOCIAL <i class="fa-solid fa-angle-down"></i>';
+        elements.navBtn.innerHTML = 'SOCIAL <svg class="icon"><use href="#icon-angle-down"></use></svg>';
       }
     });
   } else {
@@ -469,15 +495,21 @@ document.addEventListener("DOMContentLoaded", function () {
      CONTACT FORM + EMAILJS
   ========================== */
   if (elements.contactForm) {
-    emailjs.init("QPwvxbXR9QADme2kc");
-
     // Global function for reCAPTCHA
     window.onSubmit = function (token) {
+      // Check if EmailJS is loaded before trying to send
+      if (typeof emailjs === 'undefined') {
+        console.error("EmailJS not loaded yet");
+        alert("Please wait a moment and try again.");
+        grecaptcha.reset();
+        return;
+      }
+
       const submitBtn = elements.contactForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.textContent;
+      const originalBtnText = submitBtn.innerHTML;
 
       submitBtn.disabled = true;
-      submitBtn.textContent = "Sending...";
+      submitBtn.innerHTML = "Sending...";
 
       const formData = {
         title: "lineaoldenburg.com",
@@ -500,7 +532,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .finally(() => {
           submitBtn.disabled = false;
-          submitBtn.textContent = originalBtnText;
+          submitBtn.innerHTML = originalBtnText;
           grecaptcha.reset();
         });
     };
