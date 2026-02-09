@@ -1,22 +1,314 @@
 @import "./_variables";
+/* ==========================
+   SLOWER PORTFOLIO SCROLLING
+========================== */
+
+/* Add this to your main.css file */
+
+/* Method 1: CSS-only smooth scrolling (simple, works everywhere) */
+main {
+  scroll-behavior: smooth;
+}
+
+/* Method 2: Reduce scroll sensitivity using CSS (experimental, limited browser support) */
+#main_portfolio {
+  overscroll-behavior: contain;
+  scroll-snap-type: y proximity;
+}
+
+/* Method 3: Add subtle scroll snap points to slow perception (optional) */
+.portfolio-item {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+/* ==========================
+   RECOMMENDED SOLUTION
+========================== */
+
+/* Just add smooth scrolling - this makes all scrolling feel slower and more controlled */
+* {
+  scroll-behavior: smooth;
+}
+
+main {
+  scroll-behavior: smooth;
+  /* Add momentum scrolling for iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+// SINGLE PAGE //
+//nav
+.portfolio_nav_single {
+  position: sticky;
+  top: $navbar-height;
+  background: $almost-white;
+  padding: $space-md 0 0 0;
+  z-index: 1;
+
+  h1 {
+    font-family: $title-font;
+    text-transform: uppercase;
+    font-size: 22px;
+    color: $almost-black;
+    margin: 0;
+    padding: 0;
+  }
+
+  &.scrolled {
+    background-color: $almost-white;
+  }
+
+  .portfolio_nav_container {
+    background-color: #ffcc00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 62px;
+    padding: $space-lg;
+
+    &.tona {
+      h1 {
+        color: #ebff55;
+      }
+      background-color: black;
+    }
+  }
+}
+
+#main_portfolio_single {
+  position: relative;
+  border-radius: $space-lg;
+  height: auto;
+  z-index: 9;
+  max-width: 1200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  padding-top: $navbar-height;
+  padding-bottom: 802px;
+}
+
+/* Portfolio Item */
+.portfolio-item_single {
+  position: relative;
+  transition: all 0.4s ease;
+
+  /* Hidden state for filtering */
+  &.hidden {
+    display: none;
+  }
+}
+
+/*Process bar*/
+.process_bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-xl 0;
+
+  .process_arrow {
+    opacity: 0.2;
+  }
+
+  .process_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $space-md;
+    opacity: 0.6;
+    color: $almost-black;
+
+    h1 {
+      font-size: 42px;
+    }
+
+    p {
+      font-family: $title-font;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+  }
+}
+
+.snapshots {
+  max-width: 100%;
+  overflow: hidden;
+  padding: $space-xl 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+
+  .snapshot_item {
+    width: 1200px;
+    display: flex;
+    gap: $space-lg;
+
+    &.img {
+      .img_box {
+        width: 50%;
+        padding: $space-md;
+        background-color: transparent;
+
+        img {
+          width: 100%;
+          border-radius: 12px;
+        }
+      }
+    }
+
+    &.full {
+      .img_box {
+        width: 100%;
+        padding: $space-md;
+        background-color: transparent;
+
+        img {
+          width: 100%;
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+}
+
+.portfolio-card_single {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  min-height: 450px;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 1;
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 $space-6xl;
+    width: 40%;
+    min-height: 450px;
+  }
+
+  .portfolio-thumbnail-wrapper {
+    width: 100%;
+    height: auto;
+  }
+
+  .portfolio-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: top;
+    display: block;
+  }
+
+  h3 {
+    font-size: 32px;
+    color: rgb(0, 0, 0);
+    font-family: $title-font;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.6);
+    font-family: $bread-font;
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  .portfolio-excerpt {
+    color: rgb(0, 0, 0);
+    padding: $space-lg 0 0 0;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    padding: $space-md 0;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  //overview box
+  .overview_about {
+    width: 100%;
+    display: flex;
+    gap: $space-lg;
+    padding: $space-lg 0;
+
+    h1:first-child {
+      padding-top: 0;
+    }
+
+    h1 {
+      text-transform: none;
+      font-weight: 100;
+      font-family: $title-font;
+      font-size: 22px;
+      text-transform: uppercase;
+      color: $almost-black;
+      margin: 0;
+      padding-top: $space-lg;
+    }
+
+    h2 {
+      padding-top: $space-lg;
+      font-family: $title-font;
+      opacity: 1;
+      color: black;
+    }
+
+    p {
+      font-family: $bread-font;
+      font-size: 14px;
+      line-height: 1.4;
+      opacity: 0.7;
+    }
+    p.info {
+      font-size: 11px;
+      font-style: italic;
+      opacity: 0.6;
+      margin: $space-lg 0;
+      width: 60%;
+    }
+
+    .left_col {
+      width: 30%;
+
+      p {
+        padding-top: 4px;
+        text-transform: uppercase;
+      }
+    }
+
+    .right_col {
+      width: 70%;
+
+      p {
+        padding-top: $space-md;
+      }
+    }
+  }
+}
+
+//MAIN PAGE//
 
 #main_portfolio {
   position: relative;
   border-radius: $space-lg;
   height: auto;
   z-index: 9;
-  padding: 0 calc($space-6xl * 8);
+  max-width: 1200px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: transparent;
   margin-top: 100vh;
-
-  h1 {
-    font-family: $title-font;
-    text-transform: uppercase;
-    font-size: 22px;
-    color: $almost-pink;
-    margin: 0;
-    padding: 0;
-  }
+  padding-bottom: 202px;
 }
 
 /* ==========================
@@ -28,7 +320,16 @@
   top: $navbar-height;
   background: transparent;
   padding: $space-md 0 0 0;
-  z-index: 100;
+  z-index: 1;
+
+  h1 {
+    font-family: $title-font;
+    text-transform: uppercase;
+    font-size: 22px;
+    color: $almost-pink;
+    margin: 0;
+    padding: 0;
+  }
 
   &.scrolled {
     background-color: $almost-white;
@@ -39,9 +340,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 82px;
+    height: 62px;
     padding: $space-lg;
-    border: 1px solid $almost-black;
   }
 }
 
@@ -115,7 +415,6 @@
 /* Portfolio Card (Collapsed State) */
 .portfolio-card {
   background: white;
-  border: 1px solid $almost-black;
   display: flex;
   min-height: 450px;
   padding: 0;
@@ -127,9 +426,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 $space-4xl;
+    padding: 0 $space-6xl;
     width: 40%;
-    min-height: 450px;
+    min-height: 480px;
   }
 
   .portfolio-thumbnail-wrapper {
@@ -140,8 +439,10 @@
   .portfolio-thumbnail {
     width: 100%;
     height: 100%;
+    position: center;
     object-fit: cover;
     display: block;
+    min-height: 480px;
   }
 
   h3 {
@@ -155,49 +456,39 @@
   h2 {
     margin: 0;
     padding: 0;
-    color: rgba(0, 0, 0, 0.378);
+    color: rgba(0, 0, 0, 0.6);
     font-family: $bread-font;
-    font-size: 18px;
+    font-size: 14px;
+    font-weight: 300;
     text-transform: uppercase;
-
   }
 
   .portfolio-excerpt {
     color: rgb(0, 0, 0);
     padding: $space-lg 0 0 0;
-    font-family: $bread-font;
+    font-family: "Inter", sans-serif;
     font-weight: 300;
-  }
-
-  .expand-btn {
-    background: #333;
-    color: #fff;
-    width: 222px;
-    border: none;
-    border-radius: 24px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: #555;
-      transform: translateY(-2px);
-    }
+    padding: $space-md 0;
+    font-size: 14px;
+    margin: 0;
   }
 }
 
 /* Portfolio Expanded (Full Width State) */
 .portfolio-expanded {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 0px;
   left: 0;
   width: 100%;
+  height: 100vh;
   background: #fff;
-  border-radius: 12px;
   padding: 2rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  max-height: 80vh;
+  overflow: scroll;
 
   .close-btn {
     position: absolute;

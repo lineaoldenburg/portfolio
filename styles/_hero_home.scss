@@ -1,140 +1,272 @@
 @import "./_variables";
 
+/* =========================
+   MAIN HERO CONTAINER
+   ========================= */
 #main_home {
-  height: calc(100vh - $space-sm);
-  width: 100%;
-  inset: $space-sm;
   position: fixed;
+  inset: $space-sm;
+  width: 100%;
+  height: calc(100vh - $space-sm);
   border-top-left-radius: $space-lg;
   border-top-right-radius: $space-lg;
   pointer-events: none;
 }
 
+/* =========================
+   HERO BACKGROUND
+   ========================= */
 .hero_bg {
-  width: calc(100vw - ($space-sm * 2));
   position: fixed;
   inset: $space-sm;
+  width: calc(100vw - ($space-sm * 2));
   min-height: 110vh;
   z-index: -9999;
   background-image: url(../assets/bg.png);
   background-size: cover;
+  background-position: center;
   pointer-events: none;
   border-top-left-radius: $space-lg;
   border-top-right-radius: $space-lg;
 
-  // Default transition (for slow-hidden)
   transition: opacity 0.6s ease;
-
-  // Hint to browser for optimization
   will-change: opacity;
 
-  /* ------------------------
-     FAST hide (contact open)
-  ------------------------ */
   &.hidden {
     transition: opacity 0.15s linear;
     opacity: 0;
   }
 
-  /* ------------------------
-     SLOW hide (scroll)
-  ------------------------ */
   &.slow-hidden {
     transition: opacity 0.6s linear;
     opacity: 0;
   }
 }
 
+/* =========================
+   HERO TEXT CONTAINER
+   ========================= */
 .hero_text_container {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: calc(100vw - ($space-sm * 2));
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10%;
+  overflow-x: hidden;
   z-index: -1;
 }
 
+/* =========================
+   HERO TEXT
+   ========================= */
 .hero_text {
   font-family: $title-font;
-  font-size: 2vw;
-  line-height: 0.8;
-  font-weight: 50;
+  font-size: clamp(2.8rem, 2vw, 5rem); // default responsive
+  line-height: 0.9;
+  font-weight: 500;
   color: white;
   text-transform: uppercase;
   margin-top: -300px;
 
   h1 {
-    padding: 0;
     margin: 0;
+    padding: 0;
     font-family: $title-font;
   }
 
   &.back_left {
+    display: none;
     text-align: right;
-
-    h1:nth-child(1) {
-      padding-right: 12%;
-    }
-
-    h1:nth-child(2) {
-      padding-right: 8%;
-    }
-
-    h1:nth-child(3) {
-      padding-right: 38%;
-    }
-
   }
 
   &.back_right {
+    display: none;
     text-align: left;
+  }
 
-    h1:nth-child(1) {
-      padding-left: 8%;
-    }
-
-    h1:nth-child(2) {
-      padding-left: 8%;
-    }
-
+  &.mobile {
+    display: flex;
+    
   }
 }
 
+
+  .hero_text_container {
+    align-items: flex-start;
+    padding-top: 82px;
+    overflow: hidden;
+  }
+
+  .hero_text {
+    font-size: 8vw;
+    background: linear-gradient(
+      to top,
+      rgba(68, 41, 61, 0.9),
+      rgb(255, 202, 244)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.9;
+    margin: 0;
+
+    &.back_right,
+    &.back_left {
+      display: none;
+    }
+
+    &.mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+      width: 100%;
+      padding: $space-sm 0 0 0;
+      margin: 0;
+      text-align: left !important;
+
+      h1 {
+        display: block;
+        white-space: nowrap;
+        animation: scrollLeft 15s linear infinite;
+        will-change: transform;
+        margin: 0;
+        padding: 0;
+        font-size: 6vw;
+        background: linear-gradient(
+          to top,
+          rgba(222, 189, 214, 0.9),
+          rgb(230, 220, 228)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        width: max-content;
+      }
+
+      /* Duplicate content for seamless loop */
+      h1::after {
+        content: " • " attr(data-text) " • " attr(data-text) " • " attr(data-text);
+        padding-left: 0;
+      }
+
+      /* Vary animation speeds for visual interest */
+      h1:nth-child(1) {
+        animation-duration: 202s;
+        opacity: 0.4;
+      }
+      h1:nth-child(2) {
+        animation-duration: 205s;
+           opacity: 0.35;
+      }
+      h1:nth-child(3) {
+        animation-duration: 203s;
+         opacity: 0.3;
+      }
+      h1:nth-child(4) {
+        animation-duration: 204s;
+           opacity: 0.2;
+      }
+      h1:nth-child(5) {
+        animation-duration: 206s;
+          opacity: 0.15;
+      }
+      h1:nth-child(6) {
+        animation-duration: 201s;
+           opacity: 0.1;
+      }
+      h1:nth-child(7) {
+        animation-duration: 202s;
+                 opacity: 0.05;
+      }
+      h1:nth-child(8) {
+        animation-duration: 205s;
+          opacity: 0.05;
+      }
+      h1:nth-child(9) {
+         opacity: 0.05;
+        animation-duration: 204s;
+      }
+      h1:nth-child(10) {
+        animation-duration: 202s;
+        opacity: 0.05;
+      }
+      h1:nth-child(11) {
+        animation-duration: 206s;
+       opacity: 0.05;
+      }
+    }
+  }
+
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+           transform: translateX(-33.33%);
+    }
+  }
+
+
+/* =========================
+   TOP TEXT
+   ========================= */
 .top_text {
-  z-index: 999;
   position: fixed;
-  top: 0;
-  left: 0;
-  font-size: 1.5vw;
-  top: 58%;
-  margin: 0 auto;
-  text-align: center;
+  top: 62%;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 999;
+  font-size: clamp(0.5rem, 0.5vw, 1rem); // default responsive
   color: $almost-pink;
-  text-transform: uppercase;
- text-shadow: 5px 2px 0px rgb(152, 9, 95);
+  text-align: center;
   line-height: 1;
-  
+  text-shadow: 5px 2px 0px rgb(152, 9, 95);
+
   h1 {
     font-family: $title-font;
+    margin: 0;
+    font-weight: 100;
+    padding: 0;
   }
 }
 
+/* =========================
+   PROFILE IMAGE
+   ========================= */
 .profile_img_container {
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
+  align-items: flex-end;
 
   .profile_img {
     height: 100%;
-    filter: blur(22px);
+    filter: blur(12px);
     margin-bottom: -82px;
   }
 }
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+   ========================= */
+
+/* Laptop & small desktop */
+@media (min-width: 768px) and (max-width: 2056px) {
+  .hero_text {
+    font-size: clamp(3rem, 0rem, 5rem);
+    line-height: 0.9;
+  }
+
+  .top_text {
+    margin-top: 72px;
+    font-size: clamp(2rem, 8rem, 3rem);
+  }
+}
+
+

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linéa Oldenburg • Onsocial</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+   <!-- Google Fonts (trimmed weights) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;600;800&family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome (non-blocking) -->
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      />
+    </noscript>
+</head>
+
+<body>
+  <main>
+   <nav>
+        <div class="nav_col logo">
+          <h3>Linéa</h3>
+          <h3>Oldenburg</h3>
+          <p>UX / UI DESIGNER • WEBBUTVECKLARE</p>
+        </div>
+        <div class="nav_col"></div>
+
+        <!-- Desktop Navigation -->
+          <div class="nav_col btns desktop-nav">
+         
+
+          <button id="resumeBtn" class="navBtn">RESUME <i class="fa-solid fa-caret-down"></i></button>
+
+           <div class="social-wrapper">
+            <button id="navBtn" class="social-btn">SOCIAL <i class="fa-solid fa-angle-down"></i></button>
+            <div class="social_dropdown">
+              <ul>
+                <li>
+                  <a href="#" target="_blank">
+                    <i class="fa-brands fa-github"></i> Github
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a href="#" target="_blank">
+                    <i class="fa-brands fa-dribbble"></i> Dribbble
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <button id="contactBtn" aria-expanded="false"></button>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button
+          class="hamburger-btn mobile-nav"
+          aria-label="Menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu">
+        <div class="mobile-menu-content">
+          <button id="mobileContactBtn" class="mobile-menu-item">
+            <i class="fa-solid fa-face-smile"></i>
+            <span>Contact</span>
+          </button>
+
+          <button id="mobileResumeBtn" class="mobile-menu-item">
+            <i class="fa-solid fa-file-lines"></i>
+            <span>Resume</span>
+          </button>
+
+          <div class="mobile-social-section">
+            <h4>Social Links</h4>
+            <ul class="mobile-social-list">
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fa-brands fa-github"></i>
+                  <span>Github</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fa-brands fa-linkedin"></i>
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                  <i class="fa-brands fa-dribbble"></i>
+                  <span>Dribbble</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+    <section id="main_portfolio_single">
+
+      <div class="portfolio-nav-sentinel"></div>
+      <div class="portfolio_nav_single">
+
+        <div class="portfolio_nav_container">
+          <h1><i class="fa-solid fa-folder-open"></i></h1>
+          <h1> The Onsocial Project </h1>
+          <h1><i class="fa-solid fa-face-grin-wide"></i></h1>
+        </div>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="portfolio-grid">
+
+        <!-- Portfolio Item 1 -->
+        <article class="portfolio-item_single" data-category="web">
+          <div class="portfolio-card_single">
+
+            <div class="portfolio-thumbnail-wrapper">
+              <img src="assets/air_onsocial.png" alt="Project 1" class="portfolio-thumbnail">
+            </div>
+
+            <div class="overview_about">
+              <div class="left_col">
+                <h1>Overview</h1>
+
+                <h2>Role</h2>
+                <p>Frontend developer <br>UI | UX designer</p>
+                <h2>Timeline</h2>
+                <p>4 Weeks</p>
+                <h2>Tools</h2>
+                <p>React | Git | Figma</p>
+
+                <p class="info">This project is a fictitious scenario for Jensen Education</p>
+
+                <button class="expand-btn">github &nbsp;&nbsp;&nbsp; <i class="fa-brands fa-github"></i></button>
+              </div>
+              <div class="right_col">
+                <h1>Background</h1>
+                <p>As one of the largest banks in the U.S., Bank of America wants to use their reach to improve the
+                  financial health of its customers. Their current mobile app is very well rated, but very basic in
+                  functionality. The features that they are offering focus primarily on spending and making payments.
+                  Bank of America would like to round out their offerings by providing users with personalized features
+                  that allow them to manage their personal finances. They have put a lot of effort in the past on
+                  providing the most relevant products for their customers, but now they want to go beyond and not just
+                  provide these products, but also tools to help them manage money better.</p>
+
+                <h1>Problem</h1>
+                <p>As one of the largest banks in the U.S., Bank of America wants to use their reach to improve the
+                  financial health of its customers. Their current mobile app is very well rated, but very basic in
+                  functionality. The features that they are offering focus primarily on spending and making payments.
+                  Bank of America would like to round out their offerings by providing users with personalized features
+                  that allow them to manage their personal finances. They have put a lot of effort in the past on
+                  providing the most relevant products for their customers, but now they want to go beyond and not just
+                  provide these products, but also tools to help them manage money better.</p>
+
+                <h1>Goal</h1>
+                <p>As one of the largest banks in the U.S., Bank of America wants to use their reach to improve the
+                  financial health of its customers. Their current mobile app is very well rated, but very basic in
+                  functionality. The features that they are offering focus primarily on spending and making payments.
+                  Bank of America would like to round out their offerings by providing users with personalized features
+                  that allow them to manage their personal finances. They have put a lot of effort in the past on
+                  providing the most relevant products for their customers, but now they want to go beyond and not just
+                  provide these products, but also tools to help them manage money better.</p>
+
+              </div>
+            </div>
+
+            <div class="process_bar">
+              <div class="process_item">
+                <h1><i class="fa-solid fa-brain"></i></h1>
+                <p>Declare functions</p>
+              </div>
+
+              <i class="fa-solid fa-arrow-right process_arrow"></i>
+
+              <div class="process_item">
+                <h1><i class="fa-solid fa-database"></i></h1>
+                <p>Design Db</p>
+              </div>
+
+              <i class="fa-solid fa-arrow-right process_arrow"></i>
+
+              <div class="process_item">
+                <h1><i class="fa-brands fa-java"></i></h1>
+                <p>Build Backend</p>
+              </div>
+
+              <i class="fa-solid fa-arrow-right process_arrow"></i>
+
+              <div class="process_item">
+                <h1><i class="fa-brands fa-figma"></i></h1>
+                <p>Sketch Frontend</p>
+              </div>
+
+              <i class="fa-solid fa-arrow-right process_arrow"></i>
+
+              <div class="process_item">
+                <h1><i class="fa-brands fa-react"></i></h1>
+                <p>Build Frontend</p>
+              </div>
+
+              <i class="fa-solid fa-arrow-right process_arrow"></i>
+
+              <div class="process_item">
+                <h1><i class="fa-solid fa-people-roof"></i></h1>
+                <p>Test Product</p>
+              </div>
+            </div>
+
+
+            <div class="snapshots">
+
+               <div class="snapshot_item full">
+
+                <div class="img_box">
+                  <img src="assets/Onsocial_snapshot_team.png" alt="">
+                </div>
+              </div>
+
+              <div class="snapshot_item img">
+
+                <div class="img_box">
+                  <img src="assets/Onsocial_snapshot_team.png" alt="">
+                </div>
+
+                 <div class="img_box">
+                  <img src="assets/Onsocial_snaphot_main.png" alt="">
+                </div>
+              </div>
+
+              <div class="snapshot_item full">
+
+                <div class="img_box">
+                  <img src="assets/onsocial.gif" alt="">
+                </div>
+              </div>
+                
+            </div>
+
+          </div>
+      </div>
+      </article>
+
+      </div>
+
+      <footer>
+        <p>hej</p>
+      </footer>
+    </section>
+
+    <section id="main_contact">
+      <h1>This is contact-page</h1>
+    </section>
+  </main>
+  <script src="./script/script.js"></script>
+</body>
+
+</html>
