@@ -22,7 +22,7 @@
     background-color: $almost-white;
     border-top-left-radius: 24px;
     border-top-right-radius: 24px;
-    padding: calc(92px + $space-6xl) $space-6xl $space-6xl $space-6xl;
+    padding: 92px $space-6xl $space-6xl $space-6xl;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,13 +31,15 @@
     .contact_col {
       display: flex;
       flex-direction: column;
-      align-items: stretch;
-      justify-content: space-between;
+      align-items: flex-start;
+      justify-content: center;
       height: 80%;
+      gap: $space-2xl;
 
       .two_lines {
         display: flex;
-        width: 60%;
+        flex-direction: row-reverse;
+        width: 100%;
         justify-content: space-between;
         font-family: $bread-font;
       }
@@ -46,6 +48,8 @@
         font-size: 4vw;
         font-family: $title-font;
         font-weight: 100;
+        padding: 0;
+        margin: 0;
         color: $almost-black;
         line-height: 1.2;
         text-transform: uppercase;
@@ -55,7 +59,7 @@
         }
       }
 
-        p.mail-p {
+      p.mail-p {
         opacity: 0.4;
         margin-top: -282px;
         text-transform: uppercase;
@@ -68,7 +72,6 @@
       }
 
       &.form {
-      
         h1 {
           font-family: $title-font;
           font-size: 29px;
@@ -79,90 +82,95 @@
           text-transform: uppercase;
         }
 
-      #contact-form {
-        display: flex;
-        font-family: $bread-font;
-        flex-direction: column;
-        width: 100%;
-               font-size: 12px;
-
-        textarea,
-        input {
-          border: none;
-          margin-top: $space-sm;
-          margin-bottom: $space-md;
-          padding: 0;
-          font-size: 16px;
-          background-color: transparent;
-               font-family: $bread-font !important;
-
-               &:focus {
-                outline: none;
-                border: none;
-               }
-        }
-
-        label {
-          font-weight: bold;
-          text-transform: uppercase;
-          padding-top: $space-md;
-
-          &.message {
-            padding-top: $space-lg;
-          }
-        }
-
-        button {
-          text-align: left;
-          background-color: transparent;
-          border: none;
-          cursor: pointer;
-          padding: 0;
-          font-size: 22px;
+        #contact-form {
           display: flex;
-          align-items: center;
-          gap: $space-sm;
-          transition: all 0.2s ease;
-          width: 100px;
-          i {
-            font-size: 12px;
-          }
-
-           &:hover {
-            gap: $space-md;
-           }
-        }
-      }
-
-      .contact_me {
-        position: relative;
-        width: 320px;
-        bottom: 0;
-        right: 0;
-        float: right;
-        left: 100%;
-        transform: translateX(-100%);
-        margin-bottom: -32px;
-        margin-right: -12px;
-
-        img {
+          font-family: $bread-font;
+          flex-direction: column;
           width: 100%;
+          font-size: 12px;
 
-          &.tape {
-            position: absolute;
-            top: -22px;
-            right: -15px;
-            width: 120%;
+          textarea,
+          input {
+               border-radius: 7px;
+            border: 0.5px solid $almost-black;
+            margin-top: $space-sm;
+            margin-bottom: $space-md;
+            padding: $space-md;
+            font-size: 16px;
+            background-color: transparent;
+            font-family: $bread-font !important;
+
+            &:focus {
+              outline: none;
+              border: 0.5px solid $almost-black;
+            }
+          }
+
+          textarea {
+            max-width: 100%;
+            min-height: 222px;
+          }
+
+          label {
+            font-weight: bold;
+            text-transform: uppercase;
+            padding-top: $space-md;
+
+            &.message {
+              padding-top: $space-lg;
+            }
+          }
+
+          button {
+            background: $almost-black;
+            color: $almost-pink;
+            font-family: $title-font;
+            width: auto;
+            padding: $space-sm $space-md;
+            text-transform: uppercase;
+            border: none;
+            width: 222px;
+            font-size: 14px;
+            border-radius: 7px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none !important;
+
+            &:hover {
+              background-color: $almost-pink;
+              color: $almost-black;
+            }
           }
         }
-      }
-      width: 40%;
 
+        .contact_me {
+          position: relative;
+          width: 120px;
+          bottom: 0;
+          right: 0;
+          float: right;
+          left: 100%;
+          transform: translateX(-100%);
+          margin-bottom: -32px;
+          margin-right: -12px;
 
+          img {
+            width: 100%;
+
+            &.tape {
+              position: absolute;
+              top: -6px;
+              right: -5px;
+              width: 120%;
+            }
+          }
+        }
+        width: 40%;
       }
     }
-
-  
   }
 
   &.active {
@@ -170,7 +178,6 @@
     pointer-events: auto;
   }
 }
-
 
 @media (max-width: 768px) {
   #main_contact {
@@ -181,25 +188,28 @@
       align-items: flex-start;
       justify-content: flex-start;
       padding: calc(60px + $space-lg) $space-lg $space-lg $space-lg;
-      gap: $space-4xl;
+      gap: $space-xl;
       height: auto;
       min-height: 100dvh;
-      overflow-y: auto;
+      overflow-y: scroll;
 
       .contact_col {
         width: 100% !important;
         height: auto;
+        flex-direction: column-reverse;
         gap: $space-xl;
 
         .two_lines {
           width: 100%;
+          flex-direction: column;
           align-items: flex-start;
           justify-content: flex-start;
           gap: $space-2xl;
         }
 
         h1 {
-          font-size: 42px;
+          font-size: 28px;
+          padding-top: $space-md;
         }
 
         p.mail-p {

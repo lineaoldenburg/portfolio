@@ -1,4 +1,32 @@
 @charset "UTF-8";
+/* Dela Gothic One */
+@font-face {
+  font-family: "Dela Gothic One";
+  src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Inter Light */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
+  font-weight: 300; /* light */
+  font-style: normal;
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
+  font-weight: 400; /* normal */
+  font-style: normal;
+}
+/* Inter Bold */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
+  font-weight: 700; /* bold */
+  font-style: normal;
+}
 *,
 *::before,
 *::after {
@@ -62,6 +90,34 @@ h1 {
   font-family: "Inter", sans-serif;
 }
 
+/* Dela Gothic One */
+@font-face {
+  font-family: "Dela Gothic One";
+  src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Inter Light */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
+  font-weight: 300; /* light */
+  font-style: normal;
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
+  font-weight: 400; /* normal */
+  font-style: normal;
+}
+/* Inter Bold */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
+  font-weight: 700; /* bold */
+  font-style: normal;
+}
 #contactBtn {
   background-color: #141414;
   color: #D5B2CD;
@@ -84,8 +140,7 @@ h1 {
   transition: none;
 }
 #contactBtn:hover {
-  background-color: #D5B2CD;
-  color: #141414;
+  color: #f3f3f3;
 }
 #contactBtn.open {
   background-color: #D5B2CD;
@@ -149,6 +204,62 @@ h1 {
   color: #D5B2CD;
 }
 
+/* Dela Gothic One */
+@font-face {
+  font-family: "Dela Gothic One";
+  src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Inter Light */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
+  font-weight: 300; /* light */
+  font-style: normal;
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
+  font-weight: 400; /* normal */
+  font-style: normal;
+}
+/* Inter Bold */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
+  font-weight: 700; /* bold */
+  font-style: normal;
+}
+/* Dela Gothic One */
+@font-face {
+  font-family: "Dela Gothic One";
+  src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Inter Light */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
+  font-weight: 300; /* light */
+  font-style: normal;
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
+  font-weight: 400; /* normal */
+  font-style: normal;
+}
+/* Inter Bold */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
+  font-weight: 700; /* bold */
+  font-style: normal;
+}
 #main_contact {
   position: fixed;
   background-color: #141414;
@@ -171,7 +282,7 @@ h1 {
   background-color: #f3f3f3;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
-  padding: 188px 96px 96px 96px;
+  padding: 92px 96px 96px 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -180,13 +291,15 @@ h1 {
 #main_contact .contact-wrapper .contact_col {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
   height: 80%;
+  gap: 40px;
 }
 #main_contact .contact-wrapper .contact_col .two_lines {
   display: flex;
-  width: 60%;
+  flex-direction: row-reverse;
+  width: 100%;
   justify-content: space-between;
   font-family: "Inter", sans-serif;
 }
@@ -194,6 +307,8 @@ h1 {
   font-size: 4vw;
   font-family: "Dela Gothic One", sans-serif;
   font-weight: 100;
+  padding: 0;
+  margin: 0;
   color: #141414;
   line-height: 1.2;
   text-transform: uppercase;
@@ -229,10 +344,11 @@ h1 {
 }
 #main_contact .contact-wrapper .contact_col.form #contact-form textarea,
 #main_contact .contact-wrapper .contact_col.form #contact-form input {
-  border: none;
+  border-radius: 7px;
+  border: 0.5px solid #141414;
   margin-top: 8px;
   margin-bottom: 16px;
-  padding: 0;
+  padding: 16px;
   font-size: 16px;
   background-color: transparent;
   font-family: "Inter", sans-serif !important;
@@ -240,7 +356,11 @@ h1 {
 #main_contact .contact-wrapper .contact_col.form #contact-form textarea:focus,
 #main_contact .contact-wrapper .contact_col.form #contact-form input:focus {
   outline: none;
-  border: none;
+  border: 0.5px solid #141414;
+}
+#main_contact .contact-wrapper .contact_col.form #contact-form textarea {
+  max-width: 100%;
+  min-height: 222px;
 }
 #main_contact .contact-wrapper .contact_col.form #contact-form label {
   font-weight: bold;
@@ -251,27 +371,30 @@ h1 {
   padding-top: 24px;
 }
 #main_contact .contact-wrapper .contact_col.form #contact-form button {
-  text-align: left;
-  background-color: transparent;
+  background: #141414;
+  color: #D5B2CD;
+  font-family: "Dela Gothic One", sans-serif;
+  width: auto;
+  padding: 8px 16px;
+  text-transform: uppercase;
   border: none;
-  cursor: pointer;
-  padding: 0;
-  font-size: 22px;
+  width: 222px;
+  font-size: 14px;
+  border-radius: 7px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  transition: all 0.2s ease;
-  width: 100px;
-}
-#main_contact .contact-wrapper .contact_col.form #contact-form button i {
-  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
 }
 #main_contact .contact-wrapper .contact_col.form #contact-form button:hover {
-  gap: 16px;
+  background-color: #D5B2CD;
+  color: #141414;
 }
 #main_contact .contact-wrapper .contact_col.form .contact_me {
   position: relative;
-  width: 320px;
+  width: 120px;
   bottom: 0;
   right: 0;
   float: right;
@@ -285,8 +408,8 @@ h1 {
 }
 #main_contact .contact-wrapper .contact_col.form .contact_me img.tape {
   position: absolute;
-  top: -22px;
-  right: -15px;
+  top: -6px;
+  right: -5px;
   width: 120%;
 }
 #main_contact .contact-wrapper .contact_col.form {
@@ -306,24 +429,27 @@ h1 {
     align-items: flex-start;
     justify-content: flex-start;
     padding: 84px 24px 24px 24px;
-    gap: 64px;
+    gap: 32px;
     height: auto;
     min-height: 100dvh;
-    overflow-y: auto;
+    overflow-y: scroll;
   }
   #main_contact .contact-wrapper .contact_col {
     width: 100% !important;
     height: auto;
+    flex-direction: column-reverse;
     gap: 32px;
   }
   #main_contact .contact-wrapper .contact_col .two_lines {
     width: 100%;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 40px;
   }
   #main_contact .contact-wrapper .contact_col h1 {
-    font-size: 42px;
+    font-size: 28px;
+    padding-top: 16px;
   }
   #main_contact .contact-wrapper .contact_col p.mail-p {
     margin-top: 0;
@@ -373,6 +499,34 @@ h1 {
   #main_contact .contact-wrapper .contact_col.form .contact_me {
     display: none;
   }
+}
+/* Dela Gothic One */
+@font-face {
+  font-family: "Dela Gothic One";
+  src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Inter Light */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
+  font-weight: 300; /* light */
+  font-style: normal;
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
+  font-weight: 400; /* normal */
+  font-style: normal;
+}
+/* Inter Bold */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
+  font-weight: 700; /* bold */
+  font-style: normal;
 }
 /* ==========================
    SLOWER PORTFOLIO SCROLLING
@@ -865,6 +1019,34 @@ main {
   transform: translateY(-2px);
 }
 
+/* Dela Gothic One */
+@font-face {
+  font-family: "Dela Gothic One";
+  src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Inter Light */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
+  font-weight: 300; /* light */
+  font-style: normal;
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
+  font-weight: 400; /* normal */
+  font-style: normal;
+}
+/* Inter Bold */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
+  font-weight: 700; /* bold */
+  font-style: normal;
+}
 /* =========================
    MAIN HERO CONTAINER
    ========================= */
@@ -887,7 +1069,7 @@ main {
   width: calc(100vw - 16px);
   min-height: 110vh;
   z-index: -9999;
-  background-image: url(../assets/bg.png);
+  background-image: url(../assets/bg.webp);
   background-size: cover;
   background-position: center;
   pointer-events: none;
@@ -1107,6 +1289,34 @@ main {
     font-size: 3rem;
   }
 }
+/* Dela Gothic One */
+@font-face {
+  font-family: "Dela Gothic One";
+  src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Inter Light */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
+  font-weight: 300; /* light */
+  font-style: normal;
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
+  font-weight: 400; /* normal */
+  font-style: normal;
+}
+/* Inter Bold */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
+  font-weight: 700; /* bold */
+  font-style: normal;
+}
 nav {
   display: flex;
   height: 82px;
@@ -1272,6 +1482,34 @@ body.contact-open .profile_img_container {
   transition: opacity 0.3s ease;
 }
 
+/* Dela Gothic One */
+@font-face {
+  font-family: "Dela Gothic One";
+  src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Inter Light */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
+  font-weight: 300; /* light */
+  font-style: normal;
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
+  font-weight: 400; /* normal */
+  font-style: normal;
+}
+/* Inter Bold */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
+  font-weight: 700; /* bold */
+  font-style: normal;
+}
 /* ==========================
    MOBILE STYLES
 ========================== */
@@ -1572,37 +1810,37 @@ body.contact-open .profile_img_container {
     top: 85%;
   }
   .portfolio-thumbnail-wrapper.onsocial-wrapper {
-    background-image: url(../assets/air_onsocial.png);
+    background-image: url(../assets/air_onsocial.webp);
     background-size: 80%;
     background-position: center;
   }
   .portfolio-thumbnail-wrapper.oaoedl-wrapper {
-    background-image: url(../assets/book_cover.png);
+    background-image: url(../assets/book_cover.webp);
     background-size: 80%;
     background-position: center;
   }
   .portfolio-thumbnail-wrapper.tona-wrapper {
-    background-image: url(../assets/tonaphoto.png);
+    background-image: url(../assets/tonaphoto.webp);
     background-size: 70%;
     background-position: center;
   }
   .portfolio-thumbnail-wrapper.records-wrapper {
-    background-image: url(../assets/records_row.png);
+    background-image: url(../assets/records_row.webp);
     background-size: 100%;
     background-position: center;
   }
   .portfolio-thumbnail-wrapper.tinderlei-wrapper {
-    background-image: url(../assets/Tinderlei.png);
+    background-image: url(../assets/Tinderlei.webp);
     background-size: 80%;
     background-position: center;
   }
   .portfolio-thumbnail-wrapper.green-wrapper {
-    background-image: url(../assets/card.png);
+    background-image: url(../assets/card.webp);
     background-size: 100%;
     background-position: center;
   }
   .portfolio-thumbnail-wrapper.magic-wrapper {
-    background-image: url(../assets/magic.png);
+    background-image: url(../assets/magic.webp);
     background-size: 80%;
     background-position: center;
   }
@@ -1635,6 +1873,34 @@ body.contact-open .profile_img_container {
   .portfolio_nav h1 {
     font-size: 16px;
   }
+}
+/* Dela Gothic One */
+@font-face {
+  font-family: "Dela Gothic One";
+  src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Inter Light */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
+  font-weight: 300; /* light */
+  font-style: normal;
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
+  font-weight: 400; /* normal */
+  font-style: normal;
+}
+/* Inter Bold */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
+  font-weight: 700; /* bold */
+  font-style: normal;
 }
 @media (max-width: 968px) {
   /* -------------------------
@@ -1752,6 +2018,34 @@ body.contact-open .profile_img_container {
     width: 100%;
     border-radius: 12px;
   }
+}
+/* Dela Gothic One */
+@font-face {
+  font-family: "Dela Gothic One";
+  src: url("../assets/fonts/DelaGothicOne-Regular.woff2") format("woff2"), url("../assets/fonts/DelaGothicOne-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Inter Light */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Light.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Light.woff") format("woff");
+  font-weight: 300; /* light */
+  font-style: normal;
+}
+/* Inter Regular */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Regular.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Regular.woff") format("woff");
+  font-weight: 400; /* normal */
+  font-style: normal;
+}
+/* Inter Bold */
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter_28pt-Bold.woff2") format("woff2"), url("../assets/fonts/Inter_28pt-Bold.woff") format("woff");
+  font-weight: 700; /* bold */
+  font-style: normal;
 }
 footer {
   background-color: #141414;
