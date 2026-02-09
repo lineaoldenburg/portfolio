@@ -10,6 +10,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Hide reCAPTCHA badge */
+.grecaptcha-badge {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
 /* Prevent visual scroll jump during scroll restoration */
 html.restoring-scroll {
   /* Optional: hide content briefly while scroll is being set */

@@ -1,11 +1,36 @@
-/* Starting states (visible) */
+/* Starting states for page load */
+.fade_bottom { 
+  translate: 0 80px;  /* Start lower, will fade UP */
+  opacity: 0; 
+  transition: translate 0.6s ease, opacity 0.6s ease; 
+}
+
+.fade_blur { 
+  filter: blur(90px);  /* Start VERY blurred (same as scroll-away state) */
+  opacity: 0; 
+  transition: filter 0.7s ease, opacity 0.7s ease; 
+}
+
+/* Other fades start visible */
 .fade_left { transform: translateX(0); opacity: 1; transition: transform 0.6s ease, opacity 0.6s ease; }
 .fade_right { transform: translateX(0); opacity: 1; transition: transform 0.6s ease, opacity 0.6s ease; }
 .fade_out { opacity: 1; transition: opacity 0.6s ease; }
-.fade_bottom { translate: 0 0; opacity: 1; transition: translate 0.6s ease, opacity 0.6s ease; }
 .fade_top { translate: 0 0; opacity: 1; transition: translate 0.6s ease, opacity 0.6s ease; }
-.fade_blur { filter: blur(0px); opacity: 1; transition: filter 0.7s ease, opacity 0.7s ease; }
 
+/* Fade IN on page load - triggered by body.loaded class */
+body.loaded {
+  .fade_bottom {
+    translate: 0 0;  /* Slide up into position */
+    opacity: 1;
+  }
+  
+  .fade_blur {
+    filter: blur(12px);  /* Fade to natural blur state */
+    opacity: 1;
+  }
+}
+
+/* Fade OUT when scrolled down */
 body.scrolled-hero .fade_left { transform: translateX(-120px); opacity: 0; }
 body.scrolled-hero .fade_right { transform: translateX(120px); opacity: 0; }
 body.scrolled-hero .fade_out { opacity: 0; }

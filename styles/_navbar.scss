@@ -12,8 +12,10 @@ nav {
   left: $space-sm;
   top: $space-sm;
   z-index: 999;
-  transition: background-color 0.1s ease;
+  background-color: transparent; /* START transparent */
+  transition: background-color 0.1s ease; /* Fast transition for responsive scrolling */
 
+  /* Add background IMMEDIATELY when scrolled */
   &.scrolled {
     background-color: $almost-white;
   }

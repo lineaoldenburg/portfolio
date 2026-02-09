@@ -70,3 +70,10 @@ footer {
 
     }
 }
+
+@media (max-width: 768px) {
+   footer {
+        margin-top: $space-xl;
+        margin-bottom: 62px;
+   } 
+}
