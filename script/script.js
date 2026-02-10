@@ -8,16 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.pathname === "/index.html";
 
   if (isHomePage) {
-    // If on the homepage, check for the loading screen and initialize accordingly
     const hasLoadingScreen = document.getElementById("loading-screen");
 
     if (hasLoadingScreen) {
-      initializeWithLoadingScreen(); // Run loading screen logic
+      initializeWithLoadingScreen();
     } else {
-      initializeApp(); // If no loading screen, initialize app immediately
+      // No loading screen (e.g. back navigation, bfcache, or already removed)
+      document.body.classList.add("loaded");
+      document.documentElement.classList.add("fonts-loaded");
+      initializeApp();
     }
   } else {
-    // For subpages without a loading screen, initialize immediately
     initializeApp();
   }
 });
@@ -26,20 +27,30 @@ document.addEventListener("DOMContentLoaded", function () {
    LOADING SCREEN VERSION (index.html only)
 ========================== */
 function initializeWithLoadingScreen() {
-  const MIN_DISPLAY_TIME = 800; // ms — prevents blink on fast loads
+  const MIN_DISPLAY_TIME = 800;
   const startTime = Date.now();
-  const loadingScreen = document.getElementById('loading-screen');
-  const logoImg = loadingScreen?.querySelector('img');
+  const loadingScreen = document.getElementById("loading-screen");
 
-  // Fade in the logo image once it's ready
+  // Guard: if loading screen is already gone (back navigation / bfcache), skip straight through
+  if (!loadingScreen) {
+    document.body.classList.add("loaded");
+    document.documentElement.classList.add("fonts-loaded");
+    initializeApp();
+    return;
+  }
+
+  const logoImg = loadingScreen.querySelector("img");
+
   if (logoImg) {
-    logoImg.style.opacity = '0';
-    logoImg.style.transition = 'opacity 0.4s ease';
-    const revealLogo = () => { logoImg.style.opacity = '1'; };
+    logoImg.style.opacity = "0";
+    logoImg.style.transition = "opacity 0.4s ease";
+    const revealLogo = () => {
+      logoImg.style.opacity = "1";
+    };
     if (logoImg.complete) {
       revealLogo();
     } else {
-      logoImg.addEventListener('load', revealLogo, { once: true });
+      logoImg.addEventListener("load", revealLogo, { once: true });
     }
   }
 
@@ -49,27 +60,29 @@ function initializeWithLoadingScreen() {
     document.documentElement.classList.add("fonts-loaded");
 
     if (loadingScreen) {
-      loadingScreen.classList.add('fade-out');
+      loadingScreen.classList.add("fade-out");
       setTimeout(() => loadingScreen.remove(), 500);
     }
 
-    initializeApp();  // Initialize the main app after the loading screen
+    initializeApp();
   }
 
-  // Wait for fonts + critical images + minimum display time, then dismiss
   const fontsReady = (document.fonts?.ready ?? Promise.resolve()).catch(() => {
     console.warn("Some fonts failed, continuing anyway");
   });
 
   const imagesReady = Promise.all(
-    ['assets/bg.webp', 'assets/me.webp'].map(src => new Promise(res => {
-      const img = new Image();
-      img.onload = img.onerror = res;
-      img.src = src;
-    }))
+    ["assets/bg.webp", "assets/me.webp"].map(
+      (src) =>
+        new Promise((res) => {
+          const img = new Image();
+          img.onload = img.onerror = res;
+          img.src = src;
+        })
+    )
   );
 
-  const minTimeReady = new Promise(res => setTimeout(res, MIN_DISPLAY_TIME));
+  const minTimeReady = new Promise((res) => setTimeout(res, MIN_DISPLAY_TIME));
 
   Promise.all([fontsReady, imagesReady, minTimeReady]).then(finishLoading);
 }
@@ -142,7 +155,6 @@ function initializeApp() {
     hamburgerBtn: !!elements.hamburgerBtn,
   });
 
-  // Ensure logo always links to homepage (if logo exists)
   if (elements.logo) {
     elements.logo.setAttribute("href", "/index.html");
   }
@@ -204,6 +216,7 @@ function initializeApp() {
 
       const scrollPos = parseInt(savedScrollPos, 10);
 
+      // Only hide main if we actually have a position to restore
       elements.main.style.opacity = "0";
 
       document.body.classList.add("no-transitions");
@@ -220,7 +233,7 @@ function initializeApp() {
       utils.toggleClass(
         document.body,
         "scrolled-hero",
-        scrollPos > CONFIG.GLOBAL_FADE_SCROLL,
+        scrollPos > CONFIG.GLOBAL_FADE_SCROLL
       );
 
       requestAnimationFrame(() => {
@@ -311,7 +324,6 @@ function initializeApp() {
           : '<svg class="icon"><use href="#icon-face-smile"></use></svg><span>Contact</span>';
       }
 
-      // Sync contact-open class on nav, navBtn and hamburgerBtn
       utils.toggleClass(elements.nav, "contact-open", isOpen);
       utils.toggleClass(elements.navBtn, "contact-open", isOpen);
       utils.toggleClass(elements.hamburgerBtn, "contact-open", isOpen);
@@ -397,7 +409,7 @@ function initializeApp() {
         utils.toggleClass(
           document.body,
           "scrolled-hero",
-          state.homeScrollY > CONFIG.GLOBAL_FADE_SCROLL,
+          state.homeScrollY > CONFIG.GLOBAL_FADE_SCROLL
         );
 
         setTimeout(() => {
@@ -413,7 +425,7 @@ function initializeApp() {
 
   elements.contactBtn?.addEventListener("click", () => contactOverlay.open());
   elements.mobileContactBtn?.addEventListener("click", () =>
-    contactOverlay.open(),
+    contactOverlay.open()
   );
 
   /* ==========================
@@ -467,11 +479,9 @@ function initializeApp() {
       const isContactOpen = elements.main?.classList.contains("contact-open");
 
       if (!state.isHomePage) {
-        // Use browser back navigation (works like native back button)
         if (window.history.length > 1) {
           window.history.back();
         } else {
-          // Fallback if no history (direct link)
           window.location.href = "/index.html";
         }
         return;
@@ -507,10 +517,10 @@ function initializeApp() {
     hamburgerMenu.updateState();
 
     elements.hamburgerBtn.addEventListener("click", () =>
-      hamburgerMenu.handleClick(),
+      hamburgerMenu.handleClick()
     );
     document.addEventListener("click", (e) =>
-      hamburgerMenu.closeOnOutsideClick(e),
+      hamburgerMenu.closeOnOutsideClick(e)
     );
   }
 
@@ -578,13 +588,13 @@ function initializeApp() {
       utils.toggleClass(
         document.body,
         "scrolled-hero",
-        scrollY > CONFIG.GLOBAL_FADE_SCROLL,
+        scrollY > CONFIG.GLOBAL_FADE_SCROLL
       );
     },
   };
 
   elements.main?.addEventListener("scroll", () =>
-    scrollController.handleScroll(),
+    scrollController.handleScroll()
   );
 
   /* ==========================
@@ -618,7 +628,7 @@ function initializeApp() {
         root: null,
         threshold: 0,
         rootMargin: `-${CONFIG.STICKY_NAV_OFFSET}px 0px 0px 0px`,
-      },
+      }
     );
 
     stickyObserver.observe(elements.sentinel);
@@ -637,7 +647,7 @@ function initializeApp() {
       }
 
       const submitBtn = elements.contactForm.querySelector(
-        'button[type="submit"]',
+        'button[type="submit"]'
       );
       const originalBtnText = submitBtn.innerHTML;
 
