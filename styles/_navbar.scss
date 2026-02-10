@@ -24,6 +24,14 @@ nav {
     background-color: $almost-white;
   }
 
+  &.contact-open {
+    background-color: $almost-black;
+    color: $almost-pink;
+    top: 0;
+    padding-top: calc($space-lg + $space-sm);
+  
+  }
+
   .nav_col {
     font-family: $title-font;
 

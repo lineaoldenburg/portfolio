@@ -6,11 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Linéa Oldenburg • TonaPhoto</title>
   <link rel="stylesheet" href="styles/main.css" />
-   <!-- Google Fonts (trimmed weights) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;600;800&family=Dela+Gothic+One&display=swap"
-      rel="stylesheet"
-    />
 
     <style>
       /* Icon styles */
@@ -119,42 +114,47 @@
 
   <main>
    <nav>
-        <div class="nav_col logo">
+        <div class="nav_col logo" id="logo">
           <h3>Linéa</h3>
           <h3>Oldenburg</h3>
-          <p>UX / UI DESIGNER • WEBBUTVECKLARE</p>
+          <p>UX / UI DESIGNER • WEB DEVELOPER</p>
         </div>
+
         <div class="nav_col"></div>
 
-        <!-- Desktop Navigation -->
         <div class="nav_col btns desktop-nav">
           <div class="social-wrapper">
-            <button id="navBtn" class="social-btn">SOCIAL</button>
+            <button id="navBtn" class="social-btn">
+              SOCIAL
+              <svg class="icon"><use href="#icon-angle-down"></use></svg>
+            </button>
             <div class="social_dropdown">
               <ul>
                 <li>
                   <a href="#" target="_blank">
-                    <svg class="icon"><use href="#icon-github"></use></svg> Github
+                    <svg class="icon"><use href="#icon-github"></use></svg>
+                    Github
                   </a>
                 </li>
                 <li>
                   <a href="#" target="_blank">
-                    <svg class="icon"><use href="#icon-linkedin"></use></svg> LinkedIn
+                    <svg class="icon"><use href="#icon-linkedin"></use></svg>
+                    LinkedIn
                   </a>
                 </li>
                 <li>
                   <a href="#" target="_blank">
-                    <svg class="icon"><use href="#icon-dribbble"></use></svg> Dribbble
+                    <svg class="icon"><use href="#icon-instagram"></use></svg>
+                    Instagram
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-          <button id="resumeBtn">RESUME</button>
+
           <button id="contactBtn" aria-expanded="false"></button>
         </div>
 
-        <!-- Mobile Hamburger Button -->
         <button
           class="hamburger-btn mobile-nav"
           aria-label="Menu"
@@ -225,7 +225,7 @@
           <div class="portfolio-card_single">
 
             <div class="portfolio-thumbnail-wrapper">
-              <img src="assets/tonaphoto.png" alt="Project 1" class="portfolio-thumbnail">
+              <img src="assets/tonaphoto.webp" alt="Project 1" class="portfolio-thumbnail">
             </div>
 
             <div class="overview_about">
@@ -322,25 +322,25 @@
                <div class="snapshot_item full">
 
                 <div class="img_box">
-                  <img src="assets/Onsocial_snapshot_team.png" alt="">
+                  <img src="assets/Onsocial_snapshot_team.png" loading="lazy" alt="">
                 </div>
               </div>
 
               <div class="snapshot_item img">
 
                 <div class="img_box">
-                  <img src="assets/Onsocial_snapshot_team.png" alt="">
+                  <img src="assets/Onsocial_snapshot_team.png" loading="lazy"  alt="">
                 </div>
 
                  <div class="img_box">
-                  <img src="assets/Onsocial_snaphot_main.png" alt="">
+                  <img src="assets/Onsocial_snaphot_main.png" loading="lazy"  alt="">
                 </div>
               </div>
 
               <div class="snapshot_item full">
 
                 <div class="img_box">
-                  <img src="assets/onsocial.gif" alt="">
+                  <img src="assets/onsocial.gif" loading="lazy"  alt="">
                 </div>
               </div>
                 

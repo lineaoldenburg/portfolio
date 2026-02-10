@@ -22,12 +22,13 @@
   transition: none;
 
   &:hover {
-    color: $almost-white;
+    color: $almost-black;
+    background-color: $almost-pink;
   }
 
   &.open {
-    background-color: $almost-black;
-    color: $almost-white;
+    background-color: $almost-pink;
+    color: $almost-black;
   }
 }
 
@@ -46,7 +47,10 @@
 
     &.open {
    font-weight: bold;
-  
+  }
+
+  &.contact-open {
+    color: $almost-pink;
   }
 
   &:hover {
