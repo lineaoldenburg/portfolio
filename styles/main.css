@@ -170,11 +170,12 @@ h1 {
   transition: none;
 }
 #contactBtn:hover {
-  color: #f3f3f3;
+  color: #141414;
+  background-color: #D5B2CD;
 }
 #contactBtn.open {
-  background-color: #141414;
-  color: #f3f3f3;
+  background-color: #D5B2CD;
+  color: #141414;
 }
 
 .navBtn,
@@ -193,6 +194,10 @@ h1 {
 .navBtn.open,
 #navBtn.open {
   font-weight: bold;
+}
+.navBtn.contact-open,
+#navBtn.contact-open {
+  color: #D5B2CD;
 }
 .navBtn:hover,
 #navBtn:hover {
@@ -326,13 +331,16 @@ h1 {
   pointer-events: none;
   transition: opacity 0.1s ease-in-out;
   z-index: 100;
-  overflow-y: hidden;
-  padding: 8px 8px 0 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 #main_contact .contact-wrapper {
+  position: absolute;
   width: 100%;
-  height: 100dvh;
-  background-color: #f3f3f3;
+  overflow-y: auto;
+  color: #D5B2CD;
+  min-height: 100dvh;
+  background-color: #141414;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
   padding: 92px 96px 96px 96px;
@@ -362,7 +370,7 @@ h1 {
   font-weight: 100;
   padding: 0;
   margin: 0;
-  color: #141414;
+  color: #D5B2CD;
   line-height: 1.2;
   text-transform: uppercase;
 }
@@ -379,6 +387,13 @@ h1 {
   opacity: 0.4;
   padding-top: 4px;
 }
+#main_contact .contact-wrapper .contact_col p a {
+  color: #D5B2CD !important;
+  text-decoration: none;
+}
+#main_contact .contact-wrapper .contact_col p a:hover {
+  opacity: 1;
+}
 #main_contact .contact-wrapper .contact_col.form h1 {
   font-family: "Dela Gothic One", sans-serif;
   font-size: 29px;
@@ -387,6 +402,14 @@ h1 {
   font-weight: 100;
   margin-top: 26px;
   text-transform: uppercase;
+}
+#main_contact .contact-wrapper .contact_col.form .col a {
+  color: #D5B2CD;
+  text-decoration: none;
+  opacity: 0.4;
+}
+#main_contact .contact-wrapper .contact_col.form .col a:hover {
+  opacity: 1;
 }
 #main_contact .contact-wrapper .contact_col.form #contact-form {
   display: flex;
@@ -398,24 +421,30 @@ h1 {
 #main_contact .contact-wrapper .contact_col.form #contact-form textarea,
 #main_contact .contact-wrapper .contact_col.form #contact-form input {
   border-radius: 7px;
-  border: 0.5px solid #141414;
+  border: 0.5px solid #D5B2CD;
   margin-top: 8px;
   margin-bottom: 16px;
   padding: 16px;
   font-size: 16px;
   background-color: transparent;
   font-family: "Inter", sans-serif !important;
+  color: #D5B2CD !important;
+}
+#main_contact .contact-wrapper .contact_col.form #contact-form textarea::placeholder,
+#main_contact .contact-wrapper .contact_col.form #contact-form input::placeholder {
+  color: #D5B2CD !important;
+  opacity: 0.6;
 }
 #main_contact .contact-wrapper .contact_col.form #contact-form textarea:focus,
 #main_contact .contact-wrapper .contact_col.form #contact-form input:focus {
   outline: none;
-  border: 0.5px solid #141414;
+  border: 1px solid #D5B2CD;
 }
 #main_contact .contact-wrapper .contact_col.form #contact-form span {
   padding: 0 0 16px 0;
 }
 #main_contact .contact-wrapper .contact_col.form #contact-form span a {
-  color: black;
+  color: #D5B2CD;
 }
 #main_contact .contact-wrapper .contact_col.form #contact-form textarea {
   max-width: 100%;
@@ -430,8 +459,8 @@ h1 {
   padding-top: 24px;
 }
 #main_contact .contact-wrapper .contact_col.form #contact-form button {
-  background: #141414;
-  color: #D5B2CD;
+  background: #D5B2CD;
+  color: #141414;
   font-family: "Dela Gothic One", sans-serif;
   width: auto;
   padding: 8px 16px;
@@ -1431,6 +1460,12 @@ nav.scrolled {
 nav.single {
   background-color: #f3f3f3;
 }
+nav.contact-open {
+  background-color: #141414;
+  color: #D5B2CD;
+  top: 0;
+  padding-top: 32px;
+}
 nav .nav_col {
   font-family: "Dela Gothic One", sans-serif;
 }
@@ -1669,6 +1704,9 @@ body.contact-open .profile_img_container {
     z-index: 1001;
     transition: all 0.3s ease;
   }
+  .hamburger-btn.contact-open .hamburger-line {
+    background-color: #D5B2CD;
+  }
   .hamburger-line {
     width: 28px;
     height: 3px;
@@ -1899,9 +1937,10 @@ body.contact-open .profile_img_container {
     animation-duration: 106s;
   }
   .top_text {
-    font-size: 3.5em;
+    font-size: 4em;
     width: 100%;
     top: 85%;
+    overflow: visible;
   }
   .portfolio-card .portfolio-thumbnail-wrapper {
     width: 100%;
@@ -1912,6 +1951,12 @@ body.contact-open .profile_img_container {
     min-height: 488px;
     object-fit: contain;
     display: none;
+  }
+  .portfolio-excerpt {
+    font-size: 12px;
+  }
+  .portfolio-card h2 {
+    font-size: 12px;
   }
   .portfolio-card .text {
     width: 100%;
@@ -1966,7 +2011,7 @@ body.contact-open .profile_img_container {
     font-size: 9px;
   }
   .top_text {
-    width: 80%;
+    width: 90%;
     top: 85%;
     text-transform: none;
   }
@@ -2269,7 +2314,7 @@ footer .footer_wrapper .footer_col.center p {
   font-size: 14px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   footer {
     margin-top: 32px;
     margin-bottom: 62px;

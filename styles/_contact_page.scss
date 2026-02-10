@@ -13,13 +13,17 @@
   pointer-events: none;
   transition: opacity 0.1s ease-in-out;
   z-index: 100;
-  overflow-y: hidden;
-  padding: $space-sm $space-sm 0 $space-sm;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   .contact-wrapper {
+    position: absolute;
     width: 100%;
-    height: 100dvh;
-    background-color: $almost-white;
+
+    overflow-y: auto;
+    color: $almost-pink;
+    min-height: 100dvh;
+    background-color: $almost-black;
     border-top-left-radius: 24px;
     border-top-right-radius: 24px;
     padding: 92px $space-6xl $space-6xl $space-6xl;
@@ -50,7 +54,7 @@
         font-weight: 100;
         padding: 0;
         margin: 0;
-        color: $almost-black;
+        color: $almost-pink;
         line-height: 1.2;
         text-transform: uppercase;
 
@@ -69,6 +73,15 @@
         font-family: $bread-font;
         opacity: 0.4;
         padding-top: 4px;
+
+        a {
+          color: $almost-pink !important;
+          text-decoration: none;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
 
       &.form {
@@ -82,6 +95,18 @@
           text-transform: uppercase;
         }
 
+        .col {
+          a {
+            color: $almost-pink;
+            text-decoration: none;
+            opacity: 0.4;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+
         #contact-form {
           display: flex;
           font-family: $bread-font;
@@ -92,26 +117,32 @@
           textarea,
           input {
             border-radius: 7px;
-            border: 0.5px solid $almost-black;
+            border: 0.5px solid $almost-pink;
             margin-top: $space-sm;
             margin-bottom: $space-md;
             padding: $space-md;
             font-size: 16px;
             background-color: transparent;
             font-family: $bread-font !important;
+            color: $almost-pink !important;
+
+            &::placeholder {
+              color: $almost-pink !important;
+              opacity: 0.6;
+            }
 
             &:focus {
               outline: none;
-              border: 0.5px solid $almost-black;
+              border: 1px solid $almost-pink;
             }
           }
-  span {
-              padding: 0 0 $space-md 0;
+          span {
+            padding: 0 0 $space-md 0;
 
-              a {
-                color: black;
-              }
+            a {
+              color: $almost-pink;
             }
+          }
 
           textarea {
             max-width: 100%;
@@ -129,8 +160,8 @@
           }
 
           button {
-            background: $almost-black;
-            color: $almost-pink;
+            background: $almost-pink;
+            color: $almost-black;
             font-family: $title-font;
             width: auto;
             padding: $space-sm $space-md;
@@ -152,7 +183,6 @@
           }
         }
 
-     
         width: 40%;
       }
     }
@@ -163,7 +193,6 @@
     pointer-events: auto;
   }
 }
-
 
 @media (min-width: 768px) {
   .contact-wrapper {
@@ -223,7 +252,6 @@
               margin-bottom: $space-sm;
             }
 
-
             label {
               padding-top: $space-sm;
               font-size: 11px;
@@ -238,7 +266,6 @@
               margin-top: $space-lg;
             }
           }
-
         }
       }
     }

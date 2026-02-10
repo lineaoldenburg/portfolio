@@ -44,6 +44,12 @@
     position: relative;
     z-index: 1001;
     transition: all 0.3s ease;
+
+    &.contact-open {
+      .hamburger-line {
+        background-color: $almost-pink;
+      }
+    }
   }
 
   .hamburger-line {
@@ -313,9 +319,10 @@
   }
 
   .top_text {
-    font-size: 3.5em;
+    font-size: 4em;
     width: 100%;
     top: 85%;
+    overflow: visible;
   }
 
   .portfolio-card .portfolio-thumbnail-wrapper {
@@ -328,6 +335,16 @@
     min-height: 488px;
     object-fit: contain;
     display: none;
+  }
+
+  .portfolio-excerpt {
+    font-size: 12px;
+  }
+
+  .portfolio-card {
+    h2 {
+      font-size: 12px;
+    }
   }
 
   .portfolio-card .text {
@@ -396,7 +413,7 @@
   }
 
   .top_text {
-    width: 80%;
+    width: 90%;
     top: 85%;
     text-transform: none;
   }
